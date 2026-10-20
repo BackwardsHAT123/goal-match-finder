@@ -9,12 +9,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
 
 jobs:
   build:
@@ -30,17 +24,10 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python finder.py --days 7
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      # Pages on a private repo needs a paid plan, so the page is kept as a downloadable artifact.
+      # On a plan with private Pages, swap this step for actions/upload-pages-artifact + actions/deploy-pages.
+      - uses: actions/upload-artifact@v4
         with:
+          name: goal-match-finder
           path: site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          retention-days: 14
