@@ -17,8 +17,7 @@ Data: ESPN public feed (fixtures, results, head-to-head) and The Odds API (Over 
 
 ## Daily refresh
 
-`.github/workflows/daily.yml` runs the tests and rebuilds the page every day at 12:00 UTC. The result is saved as the `goal-match-finder` build artifact on each run (Actions tab, kept 14 days). Open `index.html` from the downloaded zip.
-Publishing to GitHub Pages needs a public repo or a paid plan for private repos.
+`.github/workflows/daily.yml` runs the tests, rebuilds the page and publishes it to GitHub Pages every day at 12:00 UTC.
 It needs one repository secret, `ODDS_API_KEY`. Without it the page still builds, but Over 1.5 prices are missing.
 
 ## Manual prices
