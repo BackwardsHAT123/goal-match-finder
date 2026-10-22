@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Find upcoming soccer matches (EPL, Championship, UEFA, MLS) that pass four goal-friendly filters.
 
-  1. Both teams average >= 1.5 goals scored per game this season (in that competition)
+  1. Both teams average >= 1.5 goals scored per game this season (in that competition; for the
+     Champions League, a club's domestic league games count too)
   2. Past head-to-head meetings average >= 1.5 total goals
   3. Both teams scored in >= 4 of their last 5 matches (in that competition)
   4. Over 1.5 pays -650 or better (e.g. -600 passes, -700 fails), or
@@ -32,7 +33,8 @@ from urllib.request import Request, urlopen
 LEAGUES = {
     "epl": {"name": "Premier League", "espn": "eng.1", "odds": "soccer_epl", "euro": True},
     "championship": {"name": "Championship", "espn": "eng.2", "odds": "soccer_efl_champ", "euro": True},
-    "ucl": {"name": "Champions League", "espn": "uefa.champions", "odds": "soccer_uefa_champs_league", "euro": True},
+    "ucl": {"name": "Champions League", "espn": "uefa.champions", "odds": "soccer_uefa_champs_league", "euro": True,
+            "pool_domestic": True},  # league phase is only 8 games, so UCL form also counts each club's domestic league games
     "mls": {"name": "MLS", "espn": "usa.1", "odds": "soccer_usa_mls", "euro": False},
 }
 
@@ -102,7 +104,8 @@ def same_team(a, b):
 
 # ---------------------------------------------------------------- HTTP
 
-def get_json(url, params=None, retries=4):
+def get_json(url, params=None, retries=4, missing_ok=False):
+    """GET JSON with cache and retries. None = failed. With missing_ok, a 404 returns {} (no retries)."""
     params = params or {}
     CACHE_DIR.mkdir(exist_ok=True)
     full = f"{url}?{urlencode(params)}" if params else url
@@ -119,6 +122,8 @@ def get_json(url, params=None, retries=4):
             f.write_text(json.dumps(data))
             return data
         except (HTTPError, URLError, TimeoutError, http.client.HTTPException) as e:
+            if missing_ok and isinstance(e, HTTPError) and e.code == 404:
+                return {}
             if attempt == retries:
                 print(f"warn: {full.split('?')[0]} failed: {e}", file=sys.stderr)
                 return None
@@ -158,21 +163,55 @@ def upcoming_fixtures(league, start, days):
     return out
 
 
-def team_results(league, team_id, season):
-    """Completed games for a team in this competition -> chronological [(gf, ga)]."""
-    data = get_json(f"{ESPN}/{league['espn']}/teams/{team_id}/schedule", {"season": season})
+# Tried in order to find a Champions League club's domestic league (unknown slugs just 404 and are skipped).
+DOMESTIC_SLUGS = ["eng.1", "esp.1", "ger.1", "ita.1", "fra.1", "ned.1", "por.1", "tur.1", "bel.1", "sco.1",
+                  "aut.1", "gre.1", "den.1", "nor.1", "swe.1", "sui.1", "cze.1", "ukr.1", "cro.1", "srb.1",
+                  "svk.1", "aze.1", "cyp.1", "isr.1", "bul.1", "kaz.1"]
+_domestic_slug = {}  # team id -> slug that worked, so each club is probed once per run
+
+
+def team_games(slug, team_id, season):
+    """Completed games for a team in one ESPN competition -> chronological [(date, event_id, gf, ga)].
+    None = fetch failed; [] = nothing there (including a 404 for the wrong competition)."""
+    data = get_json(f"{ESPN}/{slug}/teams/{team_id}/schedule", {"season": season}, missing_ok=True)
     if data is None:
         return None  # fetch failed after retries; caller flags the match as incomplete
     games = []
-    for ev in (data or {}).get("events", []):
+    for ev in data.get("events", []):
         c = ev["competitions"][0]
         if c["status"]["type"]["state"] != "post":
             continue
         me = next((t for t in c["competitors"] if str(t["team"]["id"]) == str(team_id)), None)
         opp = next((t for t in c["competitors"] if t is not me), None)
         if me and opp and score(me) is not None and score(opp) is not None:
-            games.append((ev["date"], score(me), score(opp)))
-    return [(gf, ga) for _, gf, ga in sorted(games)]
+            games.append((ev["date"], str(ev["id"]), score(me), score(opp)))
+    return sorted(games)
+
+
+def domestic_games(team_id, season):
+    """A Champions League club's domestic league games. None if they can't be found or a fetch failed."""
+    for slug in ([_domestic_slug[team_id]] if team_id in _domestic_slug else DOMESTIC_SLUGS):
+        games = team_games(slug, team_id, season)
+        if games is None:
+            return None
+        if games:
+            _domestic_slug[team_id] = slug
+            return games
+    return None
+
+
+def team_results(league, team_id, season):
+    """Completed games for a team -> chronological [(gf, ga)].
+    Champions League clubs also get their domestic league games (only 8 league-phase matches exist)."""
+    games = team_games(league["espn"], team_id, season)
+    if games is None:
+        return None
+    if league.get("pool_domestic"):
+        domestic = domestic_games(team_id, season)
+        if domestic is None:
+            return None  # can't see the club's league form: flag the match as incomplete instead of guessing
+        games = sorted({g[1]: g for g in games + domestic}.values())
+    return [(gf, ga) for _, _, gf, ga in games]
 
 
 def h2h_totals(league, event_id):
@@ -344,10 +383,15 @@ function sk(key,m){return m==='1.5'?key:key+' [2.5]'}
 function fmt(n){return n===null?'\\u2013':(n>0?'+':'')+n}
 function parse(v){v=String(v).trim().replace('\\u2212','-');if(!/^[+-]?\\d{3,4}$/.test(v))return null;var n=parseInt(v,10);return(n<=-100||n>=100)?n:null}
 function persist(){try{localStorage.setItem(STORE,JSON.stringify(saved))}catch(e){}}
+function hint(c,m){
+  var p='.m'+q(m)+' ',inp=c.querySelector(p+'input'),raw=inp.value.trim(),done=inp.dataset.done||'';
+  var bad=raw===done&&raw!==''&&parse(raw)===null;
+  inp.classList.toggle('bad',bad);
+  c.querySelector(p+'.hint').textContent=raw!==done?'Press Enter to apply':(bad?'Use American odds like -625':'');
+}
 function calc(c,m){
-  var p='.m'+q(m)+' ',inp=c.querySelector(p+'input'),raw=inp.value.trim(),man=parse(raw);
-  inp.classList.toggle('bad',raw!==''&&man===null);
-  c.querySelector(p+'.hint').textContent=(raw!==''&&man===null)?'Use American odds like -625':'';
+  var p='.m'+q(m)+' ',inp=c.querySelector(p+'input'),man=parse(inp.dataset.done||'');
+  hint(c,m);
   var a=c.dataset['api'+q(m)],api=a===''?null:+a,price=api,src=c.dataset['book'+q(m)]||'';
   if(man!==null&&(api===null||man>api)){price=man;src=BOOK+' (manual)'}
   c.querySelector(p+'.best').textContent=fmt(price);
@@ -378,7 +422,15 @@ cards.forEach(function(c){
   MK.forEach(function(m){
     var key=sk(c.dataset.key,m),inp=c.querySelector('.m'+q(m)+' input');
     inp.value=(key in saved)?saved[key]:c.dataset['man'+q(m)];
-    inp.addEventListener('input',function(){saved[key]=inp.value.trim();persist();update(c);refresh()});
+    inp.dataset.done=inp.value.trim();
+    function commit(){
+      var v=inp.value.trim();
+      if(v===inp.dataset.done)return;
+      inp.dataset.done=v;saved[key]=v;persist();update(c);refresh();
+    }
+    inp.addEventListener('input',function(){hint(c,m)});
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();commit();hint(c,m)}});
+    inp.addEventListener('change',commit);
   });
 });
 [].forEach.call(document.querySelectorAll('.seg button'),function(b){b.addEventListener('click',function(){setMarket(b.dataset.m)})});
@@ -437,7 +489,7 @@ def render_html(rows, args):
 
     cands = [r for r in rows if r["c1"] and r["c3"] and r["c2"] is not False and r["mk"]]
     n_inc = sum(1 for r in rows if r.get("incomplete"))
-    incomplete_note = f" ({n_inc} could not be checked because ESPN data failed to load; re-run)" if n_inc else ""
+    incomplete_note = f" ({n_inc} could not be fully checked because ESPN data was missing or failed to load; re-run)" if n_inc else ""
     crit = (f"avg goals ≥ {args.min_avg} · H2H avg ≥ {args.min_h2h} · scored in ≥4 of last 5 · "
             f"Over 1.5 at {args.odds} or better, or Over 2.5 at {args.odds_25} or better")
 
@@ -457,7 +509,7 @@ def render_html(rows, args):
 <title>Goal Match Finder</title><style>{CSS}</style></head><body><main data-market="1.5">
 <h1>Goal Match Finder</h1>
 <p class=muted>Generated {time.strftime('%Y-%m-%d %H:%M')} · next {args.days} days · {crit}<br>
-Scanned {len(rows)} fixtures{incomplete_note} · season goals and last 5 are competition-only · H2H is ESPN's last 5 meetings.</p>
+Scanned {len(rows)} fixtures{incomplete_note} · season goals and last 5 are competition-only (Champions League clubs also count their domestic league games) · H2H is ESPN's last 5 meetings.</p>
 {seg}
 {body}
 <div hidden id=card-pool>{cards}</div>
