@@ -371,22 +371,95 @@ def log_picks(log, rows):
         })
 
 
+FLAG_LABELS = {
+    "red_card": "Red card", "penalty": "Penalty", "own_goal": "Own goal", "injury_delay": "2+ injury delays",
+    "first_half_sub": "First-half sub", "late_goal": "Goal after 85'", "wasteful": "Many shots on target, few goals",
+    "low_volume": "Low shot volume",
+}
+
+
+def _minute(ev):
+    m = re.match(r"\d+", (ev.get("clock") or {}).get("displayValue") or "")
+    return int(m.group()) if m else None
+
+
+def _stat(team_stats, name):
+    for s in team_stats or []:
+        if s.get("name") == name:
+            try:
+                return float(s.get("displayValue"))
+            except (TypeError, ValueError):
+                return None
+    return None
+
+
+def postmortem(data):
+    """Unusual factors in a finished match, from ESPN's event summary: {"flags": [...], "details": [...], "stats": {...}}."""
+    flags, details, delays = [], [], []
+    goals = 0
+    for ev in (data or {}).get("keyEvents") or []:
+        kind, minute = (ev.get("type") or {}).get("type") or "", _minute(ev)
+        team = (ev.get("team") or {}).get("displayName", "")
+        at = f" {minute}'" if minute is not None else ""
+        if kind.startswith("goal") or kind == "penalty---scored" or kind == "own-goal":
+            goals += 1
+            if minute is not None and minute >= 85 and (ev.get("period") or {}).get("number", 2) <= 2:
+                flags.append("late_goal"); details.append(f"Goal{at}")
+        if kind == "red-card":
+            flags.append("red_card"); details.append(f"Red card: {team}{at}")
+        elif kind.startswith("penalty---"):
+            flags.append("penalty"); details.append(f"Penalty {kind.split('---')[1]}: {team}{at}")
+        elif kind == "own-goal":
+            flags.append("own_goal"); details.append(f"Own goal{at}")
+        elif kind == "start-delay" and "injury" in (ev.get("text") or "").lower():
+            delays.append(f"Injury delay{at}")
+        elif kind == "substitution" and (ev.get("period") or {}).get("number") == 1:
+            flags.append("first_half_sub"); details.append(f"First-half sub: {team}{at}")
+    if len(delays) >= 2:  # a single treatment stoppage happens in almost every match, so it says little
+        flags.append("injury_delay"); details.extend(delays)
+    stats = {}
+    teams = (data or {}).get("boxscore", {}).get("teams") or []
+    if len(teams) == 2 and teams[0].get("statistics"):
+        for key, name in (("shots", "totalShots"), ("sot", "shotsOnTarget"), ("saves", "saves")):
+            vals = [_stat(t.get("statistics"), name) for t in teams]
+            if None not in vals:
+                stats[key] = [int(v) for v in vals]
+        if "sot" in stats and sum(stats["sot"]) >= 8 and goals <= 2:
+            flags.append("wasteful"); details.append(f"{sum(stats['sot'])} shots on target, {goals} goals")
+        if "shots" in stats and sum(stats["shots"]) < 15:
+            flags.append("low_volume"); details.append(f"Only {sum(stats['shots'])} total shots")
+    return {"flags": sorted(set(flags)), "details": details, "stats": stats}
+
+
+def flag_counts(log, line):
+    """{flag: (in_misses, misses, in_hits, hits)} over settled picks, for one market."""
+    key = "over15" if line == "1.5" else "over25"
+    done = [r for r in log.values() if "result" in r and "notes" in r]
+    miss = [r for r in done if not r["result"][key]]
+    hit = [r for r in done if r["result"][key]]
+    return {f: (sum(f in r["notes"]["flags"] for r in miss), len(miss), sum(f in r["notes"]["flags"] for r in hit), len(hit))
+            for f in FLAG_LABELS if any(f in r["notes"]["flags"] for r in done)}
+
+
 def settle_log(log):
-    """Fetch final scores for logged matches that should be over. Returns how many were newly settled."""
+    """Fetch final scores and post-mortem notes for logged matches that should be over. Returns newly settled count."""
     now = time.strftime("%Y-%m-%dT%H:%MZ", time.gmtime(time.time() - 3 * 3600))  # allow ~3h for the match to finish
     settled = 0
     for rec in log.values():
-        if "result" in rec or rec["kickoff"] > now:
+        fresh = "result" not in rec
+        if (fresh and rec["kickoff"] > now) or (not fresh and "notes" in rec):
             continue
         data = get_json(f"{ESPN}/{LEAGUES[rec['league_code']]['espn']}/summary", {"event": rec["event_id"]})
         comp = ((data or {}).get("header", {}).get("competitions") or [None])[0]
         if not comp or comp["status"]["type"]["state"] != "post":
             continue
-        sc = {c["homeAway"]: score(c) for c in comp["competitors"]}
-        if sc.get("home") is None or sc.get("away") is None:
-            continue
-        rec["result"] = {**result_from_score(sc["home"], sc["away"]), "settled_on": date.today().isoformat()}
-        settled += 1
+        if fresh:
+            sc = {c["homeAway"]: score(c) for c in comp["competitors"]}
+            if sc.get("home") is None or sc.get("away") is None:
+                continue
+            rec["result"] = {**result_from_score(sc["home"], sc["away"]), "settled_on": date.today().isoformat()}
+            settled += 1
+        rec["notes"] = postmortem(data)
     return settled
 
 
@@ -433,7 +506,7 @@ input.bad{border-color:var(--warn)}.hint{font-size:12px;color:var(--warn)}
 button{padding:7px 14px;border:1px solid var(--accent);border-radius:8px;background:var(--accent-bg);color:var(--accent);font:inherit;font-weight:600;cursor:pointer}
 .seg{display:inline-flex;margin:14px 0 0}.seg button{border-radius:0;background:transparent}.seg button:first-child{border-radius:8px 0 0 8px}.seg button:last-child{border-radius:0 8px 8px 0;border-left:0}
 .seg button[aria-pressed="true"]{background:var(--accent);color:var(--bg)}
-.tbl{overflow-x:auto;margin-top:10px}table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);white-space:nowrap}th{font-size:12px;color:var(--muted);font-weight:600}.hit{color:var(--accent);font-weight:600}.miss{color:var(--warn);font-weight:600}
+.tbl{overflow-x:auto;margin-top:10px}table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);white-space:nowrap}th{font-size:12px;color:var(--muted);font-weight:600}.notes{white-space:normal;min-width:220px;max-width:420px;font-weight:400}.hit{color:var(--accent);font-weight:600}.miss{color:var(--warn);font-weight:600}
 .export{margin-top:32px;padding-top:16px;border-top:1px solid var(--line)}textarea{width:100%;min-height:110px;margin-top:8px;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);font:13px ui-monospace,monospace}"""
 
 JS = """(function(){
@@ -581,15 +654,29 @@ def render_html(rows, args, log=None):
             hit = rec["result"]["over15" if ln == "1.5" else "over25"]
             tag = {"qualifying": "Q", "pending_odds": "no price", "below": "too short"}[rec["markets"][ln]["status"]]
             return f"<span class={'hit' if hit else 'miss'}>{'Hit' if hit else 'Miss'}</span> <small>({tag})</small>"
+        def notes(rec):
+            n = rec.get("notes")
+            if not n:
+                return "<small>not available</small>"
+            return esc("; ".join(n["details"])) or "<small>nothing unusual</small>"
         trs = "".join(
             f"<tr><td>{esc(r['kickoff'][:10])}</td><td>{esc(r['home'])} v {esc(r['away'])}</td>"
-            f"<td>{r['result']['home']}-{r['result']['away']}</td><td>{mark(r, '1.5')}</td><td>{mark(r, '2.5')}</td></tr>"
+            f"<td>{r['result']['home']}-{r['result']['away']}</td><td>{mark(r, '1.5')}</td><td>{mark(r, '2.5')}</td>"
+            f"<td class=notes>{notes(r)}</td></tr>"
             for r in done[:40])
+        factor_html = ""
+        for ln in ("1.5", "2.5"):
+            fc = flag_counts(log, ln)
+            if fc:
+                rows_ = "".join(f"<tr><td>{FLAG_LABELS[f]}</td><td>{mi} of {mt}</td><td>{hi} of {ht}</td></tr>"
+                                for f, (mi, mt, hi, ht) in fc.items())
+                factor_html += (f"<h3>Over {ln}: what came with misses and hits</h3><div class=tbl><table><thead><tr><th>Factor</th>"
+                                f"<th>Present in misses</th><th>Present in hits</th></tr></thead><tbody>{rows_}</tbody></table></div>")
         return (f"<section><h2>Track record <span class=n>{len(done)}</span></h2>"
                 f"<p class=muted>Settled picks since {esc(min(r['flagged_on'] for r in done))}. Q = qualifying when last seen. "
                 f"Small samples say little, so treat these as context.</p><ul>{''.join(lines)}</ul>"
-                f"<div class=tbl><table><thead><tr><th>Date</th><th>Match</th><th>Score</th><th>Over 1.5</th><th>Over 2.5</th></tr></thead>"
-                f"<tbody>{trs}</tbody></table></div></section>")
+                f"<div class=tbl><table><thead><tr><th>Date</th><th>Match</th><th>Score</th><th>Over 1.5</th><th>Over 2.5</th><th>Notes</th></tr></thead>"
+                f"<tbody>{trs}</tbody></table></div>{factor_html}</section>")
 
     seg = """<div class=seg role=group aria-label="Market"><button type=button data-m="1.5" aria-pressed="true">Over 1.5</button><button type=button data-m="2.5" aria-pressed="false">Over 2.5</button></div>"""
     export = """<div class=export><button type=button id=export-btn>Export SportsBetMT prices</button>

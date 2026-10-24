@@ -4,7 +4,7 @@ from unittest import mock
 from urllib.error import HTTPError
 
 import finder
-from finder import (result_from_score, track_record, consensus_price, h2h_avg_ok, odds_ok, recent_scoring_ok,
+from finder import (postmortem, flag_counts, result_from_score, track_record, consensus_price, h2h_avg_ok, odds_ok, recent_scoring_ok,
                     same_team, season_avg_ok)
 
 
@@ -121,6 +121,40 @@ class Log(unittest.TestCase):
                "c": {"markets": mk("qualifying")}}  # unsettled
         self.assertEqual(track_record(log, "1.5"), ((1, 1), (1, 2)))
         self.assertEqual(track_record(log, "2.5"), ((1, 1), (1, 2)))
+
+
+def kev(kind, clock, period=2, team="Home FC", text=""):
+    return {"type": {"type": kind}, "clock": {"displayValue": clock}, "period": {"number": period},
+            "team": {"displayName": team}, "text": text}
+
+
+class Postmortem(unittest.TestCase):
+    def test_flags(self):
+        data = {"keyEvents": [kev("goal", "10'", 1), kev("red-card", "34'", 1, "Away FC"),
+                              kev("penalty---saved", "50'"), kev("own-goal", "60'"),
+                              kev("start-delay", "70'", text="Delay in match because of an injury Smith (Home FC)."),
+                              kev("start-delay", "75'", text="Delay in match because of an injury Jones (Away FC)."),
+                              kev("substitution", "30'", 1), kev("goal", "90'+2'")]}
+        pm = postmortem(data)
+        self.assertEqual(pm["flags"], ["first_half_sub", "injury_delay", "late_goal", "own_goal", "penalty", "red_card"])
+        self.assertIn("Red card: Away FC 34'", pm["details"])
+        one = postmortem({"keyEvents": [kev("start-delay", "70'", text="Delay in match because of an injury Smith.")]})
+        self.assertEqual(one["flags"], [])
+
+    def test_stats_flags(self):
+        def team(sot, shots):
+            return {"statistics": [{"name": "shotsOnTarget", "displayValue": str(sot)},
+                                   {"name": "totalShots", "displayValue": str(shots)},
+                                   {"name": "saves", "displayValue": "3"}]}
+        pm = postmortem({"keyEvents": [kev("goal", "5'", 1)], "boxscore": {"teams": [team(5, 12), team(4, 10)]}})
+        self.assertEqual(pm["flags"], ["wasteful"])
+        self.assertEqual(pm["stats"]["sot"], [5, 4])
+        self.assertEqual(postmortem({})["flags"], [])
+
+    def test_flag_counts(self):
+        mk = lambda total, flags: {"result": result_from_score(total, 0), "notes": {"flags": flags}}
+        log = {"a": mk(3, []), "b": mk(0, ["red_card"]), "c": mk(1, ["red_card"])}
+        self.assertEqual(flag_counts(log, "2.5"), {"red_card": (2, 2, 0, 1)})
 
 
 if __name__ == "__main__":

@@ -25,3 +25,11 @@ It needs one repository secret, `ODDS_API_KEY`. Without it the page still builds
 `manual_odds.json` holds prices from books the API does not cover, e.g. `"Home v Away": -625` for Over 1.5 and `"Home v Away [2.5]": -250` for Over 2.5.
 Type a price into a card on the page and press **Enter** (or click away) to apply it; nothing updates while you type. Then press **Export SportsBetMT prices**, paste the result into `manual_odds.json`, and commit.
 Remove a line once its match is played.
+
+## Track record
+
+With `--log` (the daily build does this) every flagged match is saved to `picks.json`. Once a match has finished,
+the final score is added and the page shows hits and misses. Each settled match also gets a short post-mortem from
+ESPN's event feed: red cards, penalties, own goals, 2+ injury delays, first-half substitutions, goals after 85',
+and shot counts (many shots on target but few goals, or very low shot volume). The page tallies how often each
+factor appeared in misses versus hits. Shot stats are missing for some matches. Samples are small, so treat the tallies as context.
