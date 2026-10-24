@@ -4,7 +4,7 @@ from unittest import mock
 from urllib.error import HTTPError
 
 import finder
-from finder import (consensus_price, h2h_avg_ok, odds_ok, recent_scoring_ok,
+from finder import (result_from_score, track_record, consensus_price, h2h_avg_ok, odds_ok, recent_scoring_ok,
                     same_team, season_avg_ok)
 
 
@@ -104,6 +104,23 @@ class ChampionsLeaguePooling(unittest.TestCase):
             res = finder.team_results({"espn": "eng.1"}, "5", 2026)
         self.assertEqual(res, [(2, 0)])
         self.assertEqual(self.calls, ["eng.1"])
+
+
+class Log(unittest.TestCase):
+    def test_result(self):
+        r = result_from_score(1, 1)
+        self.assertTrue(r["over15"])
+        self.assertFalse(r["over25"])
+        self.assertFalse(result_from_score(1, 0)["over15"])
+        self.assertTrue(result_from_score(2, 1)["over25"])
+
+    def test_track_record(self):
+        mk = lambda s: {"1.5": {"status": s}, "2.5": {"status": s}}
+        log = {"a": {"markets": mk("qualifying"), "result": result_from_score(2, 1)},
+               "b": {"markets": mk("below"), "result": result_from_score(0, 1)},
+               "c": {"markets": mk("qualifying")}}  # unsettled
+        self.assertEqual(track_record(log, "1.5"), ((1, 1), (1, 2)))
+        self.assertEqual(track_record(log, "2.5"), ((1, 1), (1, 2)))
 
 
 if __name__ == "__main__":

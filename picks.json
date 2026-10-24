@@ -1,0 +1,464 @@
+{
+ "401879245": {
+  "away": "Brighton & Hove Albion",
+  "event_id": "401879245",
+  "flagged_on": "2026-10-24",
+  "home": "Manchester City",
+  "kickoff": "2026-10-31T15:00Z",
+  "league": "Premier League",
+  "league_code": "epl",
+  "markets": {
+   "1.5": {
+    "best": -625,
+    "book": "BetRivers",
+    "status": "qualifying"
+   },
+   "2.5": {
+    "best": -195,
+    "book": "BetRivers",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.5,
+    3.29
+   ],
+   "h2h": 3.2,
+   "h2h_n": 5,
+   "last5": [
+    5,
+    5
+   ]
+  }
+ },
+ "401880185": {
+  "away": "Cardiff City",
+  "event_id": "401880185",
+  "flagged_on": "2026-10-24",
+  "home": "Wolverhampton Wanderers",
+  "kickoff": "2026-10-31T15:00Z",
+  "league": "Championship",
+  "league_code": "championship",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.67,
+    1.58
+   ],
+   "h2h": 2.6,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
+ "401880189": {
+  "away": "Queens Park Rangers",
+  "event_id": "401880189",
+  "flagged_on": "2026-10-24",
+  "home": "Southampton",
+  "kickoff": "2026-10-31T15:00Z",
+  "league": "Championship",
+  "league_code": "championship",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.0,
+    1.67
+   ],
+   "h2h": 2.6,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
+ "761898": {
+  "away": "St. Louis CITY SC",
+  "event_id": "761898",
+  "flagged_on": "2026-10-24",
+  "home": "Real Salt Lake",
+  "kickoff": "2026-10-25T01:30Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -600,
+    "book": "DraftKings",
+    "status": "qualifying"
+   },
+   "2.5": {
+    "best": -194,
+    "book": "FanDuel",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.5,
+    1.87
+   ],
+   "h2h": 3.4,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
+ "761900": {
+  "away": "San Jose Earthquakes",
+  "event_id": "761900",
+  "flagged_on": "2026-10-24",
+  "home": "FC Dallas",
+  "kickoff": "2026-10-25T00:30Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -700,
+    "book": "DraftKings",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -220,
+    "book": "FanDuel",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.83,
+    1.73
+   ],
+   "h2h": 4.6,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
+ "761908": {
+  "away": "FC Cincinnati",
+  "event_id": "761908",
+  "flagged_on": "2026-10-24",
+  "home": "Inter Miami CF",
+  "kickoff": "2026-10-28T23:30Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -3335,
+    "book": "BetRivers",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -670,
+    "book": "BetRivers",
+    "status": "below"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.43,
+    2.07
+   ],
+   "h2h": 3.4,
+   "h2h_n": 5,
+   "last5": [
+    5,
+    4
+   ]
+  }
+ },
+ "761911": {
+  "away": "Orlando City SC",
+  "event_id": "761911",
+  "flagged_on": "2026-10-24",
+  "home": "Chicago Fire FC",
+  "kickoff": "2026-10-29T00:30Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -1667,
+    "book": "BetRivers",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -375,
+    "book": "BetRivers",
+    "status": "below"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.73,
+    1.93
+   ],
+   "h2h": 3.4,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
+ "761912": {
+  "away": "Columbus Crew",
+  "event_id": "761912",
+  "flagged_on": "2026-10-24",
+  "home": "FC Dallas",
+  "kickoff": "2026-10-29T00:30Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -835,
+    "book": "BetRivers",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -235,
+    "book": "BetRivers",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.83,
+    1.53
+   ],
+   "h2h": 2.0,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
+ "761914": {
+  "away": "Philadelphia Union",
+  "event_id": "761914",
+  "flagged_on": "2026-10-24",
+  "home": "Nashville SC",
+  "kickoff": "2026-10-29T00:30Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -770,
+    "book": "BetRivers",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -215,
+    "book": "BetRivers",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.13,
+    2.03
+   ],
+   "h2h": 2.4,
+   "h2h_n": 5,
+   "last5": [
+    5,
+    5
+   ]
+  }
+ },
+ "761918": {
+  "away": "San Diego FC",
+  "event_id": "761918",
+  "flagged_on": "2026-10-24",
+  "home": "Vancouver Whitecaps",
+  "kickoff": "2026-10-29T02:30Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -1430,
+    "book": "BetRivers",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -345,
+    "book": "BetRivers",
+    "status": "below"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.1,
+    1.77
+   ],
+   "h2h": 5.0,
+   "h2h_n": 4,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
+ "761919": {
+  "away": "Philadelphia Union",
+  "event_id": "761919",
+  "flagged_on": "2026-10-24",
+  "home": "FC Cincinnati",
+  "kickoff": "2026-10-31T18:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -1667,
+    "book": "BetRivers",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -385,
+    "book": "BetRivers",
+    "status": "below"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.07,
+    2.03
+   ],
+   "h2h": 4.0,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
+ "761922": {
+  "away": "Orlando City SC",
+  "event_id": "761922",
+  "flagged_on": "2026-10-24",
+  "home": "Charlotte FC",
+  "kickoff": "2026-10-31T17:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -1430,
+    "book": "BetRivers",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -345,
+    "book": "BetRivers",
+    "status": "below"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.77,
+    1.93
+   ],
+   "h2h": 3.0,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
+ "761926": {
+  "away": "San Diego FC",
+  "event_id": "761926",
+  "flagged_on": "2026-10-24",
+  "home": "St. Louis CITY SC",
+  "kickoff": "2026-10-31T19:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -1115,
+    "book": "BetRivers",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -295,
+    "book": "BetRivers",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.87,
+    1.77
+   ],
+   "h2h": 1.67,
+   "h2h_n": 3,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
+ "761929": {
+  "away": "Real Salt Lake",
+  "event_id": "761929",
+  "flagged_on": "2026-10-24",
+  "home": "San Jose Earthquakes",
+  "kickoff": "2026-10-31T21:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.73,
+    1.5
+   ],
+   "h2h": 2.4,
+   "h2h_n": 5,
+   "last5": [
+    5,
+    4
+   ]
+  }
+ }
+}

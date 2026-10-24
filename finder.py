@@ -314,6 +314,7 @@ def evaluate(args):
             gh, ga = gh or [], ga or []
             row = {"league": lg["name"], "kickoff": fx["date"], "home": h["displayName"], "away": a["displayName"],
                    "home_logo": h.get("logo"), "away_logo": a.get("logo"),
+                   "event_id": fx["id"], "league_code": code,
                    "avg": [avg(gh), avg(ga)], "games": [len(gh), len(ga)],
                    "last5": [sum(1 for g in goals_for(x)[-5:] if g >= 1) for x in (gh, ga)],
                    "espn_line": fx["espn_total"], "espn_over": fx["espn_over"], "espn_book": fx["espn_book"],
@@ -332,6 +333,70 @@ def evaluate(args):
             rows.append(row)
     rows.sort(key=lambda r: r["kickoff"])
     return rows
+
+
+# ---------------------------------------------------------------- pick log and settlement
+
+LOG_FILE = Path(__file__).parent / "picks.json"
+
+
+def load_log():
+    return json.loads(LOG_FILE.read_text()) if LOG_FILE.exists() else {}
+
+
+def save_log(log):
+    LOG_FILE.write_text(json.dumps(log, indent=1, sort_keys=True) + "\n")
+
+
+def result_from_score(home, away):
+    total = home + away
+    return {"home": home, "away": away, "total": total, "over15": total >= 2, "over25": total >= 3}
+
+
+def log_picks(log, rows):
+    """Record every match that passes filters 1-3; prices refresh on each run until the match kicks off."""
+    today = date.today().isoformat()
+    for r in rows:
+        if not (r["c1"] and r["c3"] and r["c2"] is not False and r["mk"]):
+            continue
+        rec = log.setdefault(r["event_id"], {"flagged_on": today})
+        if "result" in rec:
+            continue
+        rec.update({
+            "event_id": r["event_id"], "league": r["league"], "league_code": r["league_code"],
+            "kickoff": r["kickoff"], "home": r["home"], "away": r["away"],
+            "stats": {"avg": r["avg"], "last5": r["last5"], "h2h": r["h2h"], "h2h_n": r["h2h_n"]},
+            "markets": {ln: {"best": r["mk"][ln]["best"], "book": r["mk"][ln]["book"], "status": bucket(r, ln)}
+                        for ln in ("1.5", "2.5")},
+        })
+
+
+def settle_log(log):
+    """Fetch final scores for logged matches that should be over. Returns how many were newly settled."""
+    now = time.strftime("%Y-%m-%dT%H:%MZ", time.gmtime(time.time() - 3 * 3600))  # allow ~3h for the match to finish
+    settled = 0
+    for rec in log.values():
+        if "result" in rec or rec["kickoff"] > now:
+            continue
+        data = get_json(f"{ESPN}/{LEAGUES[rec['league_code']]['espn']}/summary", {"event": rec["event_id"]})
+        comp = ((data or {}).get("header", {}).get("competitions") or [None])[0]
+        if not comp or comp["status"]["type"]["state"] != "post":
+            continue
+        sc = {c["homeAway"]: score(c) for c in comp["competitors"]}
+        if sc.get("home") is None or sc.get("away") is None:
+            continue
+        rec["result"] = {**result_from_score(sc["home"], sc["away"]), "settled_on": date.today().isoformat()}
+        settled += 1
+    return settled
+
+
+def track_record(log, line):
+    """(hits, total) of settled picks for a market: those flagged as qualifying, and all logged."""
+    key = "over15" if line == "1.5" else "over25"
+    done = [r for r in log.values() if "result" in r]
+    qual = [r for r in done if r["markets"][line]["status"] == "qualifying"]
+    return ((sum(r["result"][key] for r in qual), len(qual)),
+            (sum(r["result"][key] for r in done), len(done)))
 
 
 def bucket(r, line="1.5"):
@@ -368,6 +433,7 @@ input.bad{border-color:var(--warn)}.hint{font-size:12px;color:var(--warn)}
 button{padding:7px 14px;border:1px solid var(--accent);border-radius:8px;background:var(--accent-bg);color:var(--accent);font:inherit;font-weight:600;cursor:pointer}
 .seg{display:inline-flex;margin:14px 0 0}.seg button{border-radius:0;background:transparent}.seg button:first-child{border-radius:8px 0 0 8px}.seg button:last-child{border-radius:0 8px 8px 0;border-left:0}
 .seg button[aria-pressed="true"]{background:var(--accent);color:var(--bg)}
+.tbl{overflow-x:auto;margin-top:10px}table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);white-space:nowrap}th{font-size:12px;color:var(--muted);font-weight:600}.hit{color:var(--accent);font-weight:600}.miss{color:var(--warn);font-weight:600}
 .export{margin-top:32px;padding-top:16px;border-top:1px solid var(--line)}textarea{width:100%;min-height:110px;margin-top:8px;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);font:13px ui-monospace,monospace}"""
 
 JS = """(function(){
@@ -446,7 +512,7 @@ document.getElementById('export-btn').addEventListener('click',function(){
 })();"""
 
 
-def render_html(rows, args):
+def render_html(rows, args, log=None):
     def esc(x):
         return html.escape(str(x), quote=True)
 
@@ -501,6 +567,30 @@ def render_html(rows, args):
             + sec("pend", "Needs price", "Passes filters 1–3 but no book has an Over <span class=mname></span> line yet. Enter a SportsBetMT price on a card to check it.")
             + sec("below", "Price too short", "Passes filters 1–3, but the best Over <span class=mname></span> price is worse than <span class=cut></span>. A better SportsBetMT price moves it up."))
     cards = "\n".join(card(r) for r in cands)
+
+    def results_section():
+        done = sorted((r for r in (log or {}).values() if "result" in r), key=lambda r: r["kickoff"], reverse=True)
+        if not done:
+            return ("<section><h2>Track record</h2><p class=empty>No settled picks yet. Matches are logged when flagged "
+                    "and scored once they finish.</p></section>")
+        lines = []
+        for ln in ("1.5", "2.5"):
+            (qh, qn), (ah, an) = track_record(log, ln)
+            lines.append(f"<li>Over {ln}: <b>{qh} of {qn}</b> qualifying picks hit · {ah} of {an} of all logged picks hit</li>")
+        def mark(rec, ln):
+            hit = rec["result"]["over15" if ln == "1.5" else "over25"]
+            tag = {"qualifying": "Q", "pending_odds": "no price", "below": "too short"}[rec["markets"][ln]["status"]]
+            return f"<span class={'hit' if hit else 'miss'}>{'Hit' if hit else 'Miss'}</span> <small>({tag})</small>"
+        trs = "".join(
+            f"<tr><td>{esc(r['kickoff'][:10])}</td><td>{esc(r['home'])} v {esc(r['away'])}</td>"
+            f"<td>{r['result']['home']}-{r['result']['away']}</td><td>{mark(r, '1.5')}</td><td>{mark(r, '2.5')}</td></tr>"
+            for r in done[:40])
+        return (f"<section><h2>Track record <span class=n>{len(done)}</span></h2>"
+                f"<p class=muted>Settled picks since {esc(min(r['flagged_on'] for r in done))}. Q = qualifying when last seen. "
+                f"Small samples say little, so treat these as context.</p><ul>{''.join(lines)}</ul>"
+                f"<div class=tbl><table><thead><tr><th>Date</th><th>Match</th><th>Score</th><th>Over 1.5</th><th>Over 2.5</th></tr></thead>"
+                f"<tbody>{trs}</tbody></table></div></section>")
+
     seg = """<div class=seg role=group aria-label="Market"><button type=button data-m="1.5" aria-pressed="true">Over 1.5</button><button type=button data-m="2.5" aria-pressed="false">Over 2.5</button></div>"""
     export = """<div class=export><button type=button id=export-btn>Export SportsBetMT prices</button>
 <span class=muted id=export-msg></span><textarea id=export-out hidden readonly aria-label="manual_odds.json contents"></textarea></div>"""
@@ -513,6 +603,7 @@ Scanned {len(rows)} fixtures{incomplete_note} · season goals and last 5 are com
 {seg}
 {body}
 <div hidden id=card-pool>{cards}</div>
+{results_section()}
 {export}
 </main><script>{js}</script></body></html>"""
 
@@ -527,12 +618,19 @@ def main(argv=None):
     p.add_argument("--odds", type=int, default=-650, help="American odds cutoff for Over 1.5, -650 or better (default -650)")
     p.add_argument("--odds-25", type=int, default=-300, help="American odds cutoff for Over 2.5, -300 or better (default -300)")
     p.add_argument("--allow-no-h2h", action="store_true", help="pass teams that have never met")
+    p.add_argument("--log", action="store_true", help="record flagged matches in picks.json and settle finished ones (used by the daily build)")
     p.add_argument("--out", default=str(Path(__file__).parent / "site" / "index.html"))
     args = p.parse_args(argv)
     rows = evaluate(args)
+    log = load_log()
+    if args.log:
+        log_picks(log, rows)
+        newly = settle_log(log)
+        save_log(log)
+        print(f"pick log: {len(log)} picks, {sum('result' in r for r in log.values())} settled ({newly} new)")
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(render_html(rows, args))
+    out.write_text(render_html(rows, args, log))
     (out.parent / "matches.json").write_text(json.dumps(rows, indent=1))
     for line in ("1.5", "2.5"):
         counts = {k: sum(1 for r in rows if bucket(r, line) == k) for k in ("qualifying", "pending_odds", "below")}
