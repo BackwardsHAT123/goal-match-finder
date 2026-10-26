@@ -9,26 +9,26 @@
   "league_code": "epl",
   "markets": {
    "1.5": {
-    "best": -625,
-    "book": "BetRivers",
-    "status": "qualifying"
+    "best": -675,
+    "book": "Bovada",
+    "status": "below"
    },
    "2.5": {
-    "best": -195,
-    "book": "BetRivers",
+    "best": -212,
+    "book": "Bovada",
     "status": "qualifying"
    }
   },
   "stats": {
    "avg": [
     2.5,
-    3.29
+    2.88
    ],
    "h2h": 3.2,
    "h2h_n": 5,
    "last5": [
     5,
-    5
+    4
    ]
   }
  },
@@ -270,12 +270,12 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1400,
+    "best": -1200,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -340,
+    "best": -330,
     "book": "DraftKings",
     "status": "below"
    }
@@ -303,9 +303,9 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -700,
+    "best": -650,
     "book": "DraftKings",
-    "status": "below"
+    "status": "qualifying"
    },
    "2.5": {
     "best": -205,
@@ -336,7 +336,7 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -650,
+    "best": -600,
     "book": "DraftKings",
     "status": "qualifying"
    },
