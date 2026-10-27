@@ -32,6 +32,72 @@
    ]
   }
  },
+ "401880183": {
+  "away": "Stoke City",
+  "event_id": "401880183",
+  "flagged_on": "2026-10-27",
+  "home": "Blackburn Rovers",
+  "kickoff": "2026-11-03T19:45Z",
+  "league": "Championship",
+  "league_code": "championship",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.58,
+    1.5
+   ],
+   "h2h": 2.2,
+   "h2h_n": 5,
+   "last5": [
+    5,
+    4
+   ]
+  }
+ },
+ "401880184": {
+  "away": "Millwall",
+  "event_id": "401880184",
+  "flagged_on": "2026-10-27",
+  "home": "Birmingham City",
+  "kickoff": "2026-11-03T20:00Z",
+  "league": "Championship",
+  "league_code": "championship",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.67,
+    1.58
+   ],
+   "h2h": 2.2,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
  "401880185": {
   "away": "Cardiff City",
   "event_id": "401880185",
@@ -95,6 +161,72 @@
    "last5": [
     4,
     4
+   ]
+  }
+ },
+ "401915307": {
+  "away": "Internazionale",
+  "event_id": "401915307",
+  "flagged_on": "2026-10-27",
+  "home": "Feyenoord Rotterdam",
+  "kickoff": "2026-11-03T20:00Z",
+  "league": "Champions League",
+  "league_code": "ucl",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.77,
+    2.55
+   ],
+   "h2h": 2.5,
+   "h2h_n": 4,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
+ "401915386": {
+  "away": "Bayern Munich",
+  "event_id": "401915386",
+  "flagged_on": "2026-10-27",
+  "home": "Atl\u00e9tico Madrid",
+  "kickoff": "2026-11-03T20:00Z",
+  "league": "Champions League",
+  "league_code": "ucl",
+  "markets": {
+   "1.5": {
+    "best": -835,
+    "book": "BetRivers",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -240,
+    "book": "BetRivers",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.85,
+    3.5
+   ],
+   "h2h": 2.2,
+   "h2h_n": 5,
+   "last5": [
+    5,
+    5
    ]
   }
  },
@@ -270,12 +402,12 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1200,
+    "best": -1400,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -330,
+    "best": -340,
     "book": "DraftKings",
     "status": "below"
    }
@@ -308,7 +440,7 @@
     "status": "qualifying"
    },
    "2.5": {
-    "best": -205,
+    "best": -200,
     "book": "DraftKings",
     "status": "qualifying"
    }
@@ -501,7 +633,7 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -910,
+    "best": -1000,
     "book": "BetRivers",
     "status": "below"
    },
