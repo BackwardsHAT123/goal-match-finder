@@ -9,12 +9,12 @@
   "league_code": "epl",
   "markets": {
    "1.5": {
-    "best": -675,
+    "best": -700,
     "book": "Bovada",
     "status": "below"
    },
    "2.5": {
-    "best": -212,
+    "best": -220,
     "book": "Bovada",
     "status": "qualifying"
    }
@@ -29,6 +29,39 @@
    "last5": [
     5,
     4
+   ]
+  }
+ },
+ "401880175": {
+  "away": "West Ham United",
+  "event_id": "401880175",
+  "flagged_on": "2026-10-28",
+  "home": "Cardiff City",
+  "kickoff": "2026-11-04T19:45Z",
+  "league": "Championship",
+  "league_code": "championship",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.58,
+    2.67
+   ],
+   "h2h": 3.0,
+   "h2h_n": 5,
+   "last5": [
+    5,
+    5
    ]
   }
  },
@@ -164,6 +197,105 @@
    ]
   }
  },
+ "401915301": {
+  "away": "Napoli",
+  "event_id": "401915301",
+  "flagged_on": "2026-10-28",
+  "home": "FC Porto",
+  "kickoff": "2026-11-04T20:00Z",
+  "league": "Champions League",
+  "league_code": "ucl",
+  "markets": {
+   "1.5": {
+    "best": -390,
+    "book": "DraftKings",
+    "status": "qualifying"
+   },
+   "2.5": {
+    "best": -130,
+    "book": "DraftKings",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.92,
+    1.64
+   ],
+   "h2h": 2.5,
+   "h2h_n": 2,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
+ "401915303": {
+  "away": "Club Brugge",
+  "event_id": "401915303",
+  "flagged_on": "2026-10-28",
+  "home": "PSV Eindhoven",
+  "kickoff": "2026-11-04T20:00Z",
+  "league": "Champions League",
+  "league_code": "ucl",
+  "markets": {
+   "1.5": {
+    "best": -1000,
+    "book": "DraftKings",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -265,
+    "book": "BetRivers",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.31,
+    2.58
+   ],
+   "h2h": 2.67,
+   "h2h_n": 3,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
+ "401915306": {
+  "away": "Manchester City",
+  "event_id": "401915306",
+  "flagged_on": "2026-10-28",
+  "home": "RB Leipzig",
+  "kickoff": "2026-11-04T20:00Z",
+  "league": "Champions League",
+  "league_code": "ucl",
+  "markets": {
+   "1.5": {
+    "best": -910,
+    "book": "BetRivers",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -250,
+    "book": "BetRivers",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.3,
+    2.64
+   ],
+   "h2h": 4.2,
+   "h2h_n": 5,
+   "last5": [
+    5,
+    5
+   ]
+  }
+ },
  "401915307": {
   "away": "Internazionale",
   "event_id": "401915307",
@@ -193,6 +325,39 @@
    "h2h_n": 4,
    "last5": [
     4,
+    5
+   ]
+  }
+ },
+ "401915383": {
+  "away": "Real Madrid",
+  "event_id": "401915383",
+  "flagged_on": "2026-10-28",
+  "home": "AEK Athens",
+  "kickoff": "2026-11-04T17:45Z",
+  "league": "Champions League",
+  "league_code": "ucl",
+  "markets": {
+   "1.5": {
+    "best": -1100,
+    "book": "DraftKings",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -310,
+    "book": "DraftKings",
+    "status": "below"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.4,
+    2.69
+   ],
+   "h2h": 5.0,
+   "h2h_n": 2,
+   "last5": [
+    5,
     5
    ]
   }
@@ -374,7 +539,7 @@
     "status": "below"
    },
    "2.5": {
-    "best": -425,
+    "best": -450,
     "book": "DraftKings",
     "status": "below"
    }
@@ -402,13 +567,13 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1400,
+    "best": -1800,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -340,
-    "book": "DraftKings",
+    "best": -400,
+    "book": "BetRivers",
     "status": "below"
    }
   },
@@ -440,7 +605,7 @@
     "status": "qualifying"
    },
    "2.5": {
-    "best": -200,
+    "best": -195,
     "book": "DraftKings",
     "status": "qualifying"
    }
@@ -468,12 +633,12 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -600,
+    "best": -550,
     "book": "DraftKings",
     "status": "qualifying"
    },
    "2.5": {
-    "best": -190,
+    "best": -170,
     "book": "DraftKings",
     "status": "qualifying"
    }
