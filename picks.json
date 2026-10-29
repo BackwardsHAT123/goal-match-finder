@@ -9,13 +9,13 @@
   "league_code": "epl",
   "markets": {
    "1.5": {
-    "best": -700,
-    "book": "Bovada",
+    "best": -800,
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -220,
-    "book": "Bovada",
+    "best": -225,
+    "book": "BetRivers",
     "status": "qualifying"
    }
   },
@@ -220,7 +220,7 @@
   "stats": {
    "avg": [
     1.92,
-    1.64
+    1.83
    ],
    "h2h": 2.5,
    "h2h_n": 2,
@@ -240,8 +240,8 @@
   "league_code": "ucl",
   "markets": {
    "1.5": {
-    "best": -1000,
-    "book": "DraftKings",
+    "best": -910,
+    "book": "BetRivers",
     "status": "below"
    },
    "2.5": {
@@ -273,8 +273,8 @@
   "league_code": "ucl",
   "markets": {
    "1.5": {
-    "best": -910,
-    "book": "BetRivers",
+    "best": -1000,
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
@@ -319,7 +319,7 @@
   "stats": {
    "avg": [
     2.77,
-    2.55
+    2.5
    ],
    "h2h": 2.5,
    "h2h_n": 4,
@@ -377,7 +377,7 @@
     "status": "below"
    },
    "2.5": {
-    "best": -240,
+    "best": -235,
     "book": "BetRivers",
     "status": "qualifying"
    }
@@ -544,6 +544,37 @@
     "status": "below"
    }
   },
+  "notes": {
+   "details": [
+    "Goal 86'",
+    "Goal 90'"
+   ],
+   "flags": [
+    "late_goal"
+   ],
+   "stats": {
+    "saves": [
+     1,
+     2
+    ],
+    "shots": [
+     14,
+     13
+    ],
+    "sot": [
+     4,
+     3
+    ]
+   }
+  },
+  "result": {
+   "away": 2,
+   "home": 2,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-10-29",
+   "total": 4
+  },
   "stats": {
    "avg": [
     2.35,
@@ -576,6 +607,32 @@
     "book": "BetRivers",
     "status": "below"
    }
+  },
+  "notes": {
+   "details": [],
+   "flags": [],
+   "stats": {
+    "saves": [
+     3,
+     3
+    ],
+    "shots": [
+     23,
+     9
+    ],
+    "sot": [
+     5,
+     5
+    ]
+   }
+  },
+  "result": {
+   "away": 2,
+   "home": 2,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-10-29",
+   "total": 4
   },
   "stats": {
    "avg": [
@@ -610,6 +667,36 @@
     "status": "qualifying"
    }
   },
+  "notes": {
+   "details": [
+    "8 shots on target, 2 goals"
+   ],
+   "flags": [
+    "wasteful"
+   ],
+   "stats": {
+    "saves": [
+     1,
+     5
+    ],
+    "shots": [
+     16,
+     9
+    ],
+    "sot": [
+     5,
+     3
+    ]
+   }
+  },
+  "result": {
+   "away": 2,
+   "home": 0,
+   "over15": true,
+   "over25": false,
+   "settled_on": "2026-10-29",
+   "total": 2
+  },
   "stats": {
    "avg": [
     1.87,
@@ -642,6 +729,37 @@
     "book": "DraftKings",
     "status": "qualifying"
    }
+  },
+  "notes": {
+   "details": [
+    "Injury delay 17'",
+    "Injury delay 90'"
+   ],
+   "flags": [
+    "injury_delay"
+   ],
+   "stats": {
+    "saves": [
+     2,
+     1
+    ],
+    "shots": [
+     9,
+     6
+    ],
+    "sot": [
+     1,
+     2
+    ]
+   }
+  },
+  "result": {
+   "away": 0,
+   "home": 0,
+   "over15": false,
+   "over25": false,
+   "settled_on": "2026-10-29",
+   "total": 0
   },
   "stats": {
    "avg": [
@@ -676,6 +794,41 @@
     "status": "below"
    }
   },
+  "notes": {
+   "details": [
+    "Red card: Vancouver Whitecaps 90'",
+    "Injury delay 43'",
+    "Injury delay 49'",
+    "Injury delay 65'",
+    "Injury delay 78'"
+   ],
+   "flags": [
+    "injury_delay",
+    "red_card"
+   ],
+   "stats": {
+    "saves": [
+     5,
+     6
+    ],
+    "shots": [
+     16,
+     20
+    ],
+    "sot": [
+     10,
+     7
+    ]
+   }
+  },
+  "result": {
+   "away": 1,
+   "home": 4,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-10-29",
+   "total": 5
+  },
   "stats": {
    "avg": [
     2.1,
@@ -699,26 +852,26 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -2000,
-    "book": "BetRivers",
+    "best": -1000,
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -385,
-    "book": "BetRivers",
-    "status": "below"
+    "best": -300,
+    "book": "DraftKings",
+    "status": "qualifying"
    }
   },
   "stats": {
    "avg": [
     2.06,
-    2.0
+    1.94
    ],
    "h2h": 4.0,
    "h2h_n": 5,
    "last5": [
     4,
-    5
+    4
    ]
   }
  },
@@ -732,25 +885,25 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1430,
-    "book": "BetRivers",
+    "best": -1400,
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -360,
-    "book": "BetRivers",
+    "best": -350,
+    "book": "FanDuel",
     "status": "below"
    }
   },
   "stats": {
    "avg": [
-    1.77,
+    1.84,
     1.94
    ],
    "h2h": 3.0,
    "h2h_n": 5,
    "last5": [
-    4,
+    5,
     5
    ]
   }
@@ -798,26 +951,59 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1000,
-    "book": "BetRivers",
+    "best": -700,
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -265,
-    "book": "BetRivers",
+    "best": -210,
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
   "stats": {
    "avg": [
-    1.68,
-    1.55
+    1.69,
+    1.56
    ],
    "h2h": 2.4,
    "h2h_n": 5,
    "last5": [
     4,
     5
+   ]
+  }
+ },
+ "761932": {
+  "away": "Inter Miami CF",
+  "event_id": "761932",
+  "flagged_on": "2026-10-29",
+  "home": "New England Revolution",
+  "kickoff": "2026-11-02T00:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -1100,
+    "book": "DraftKings",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -300,
+    "book": "DraftKings",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.69,
+    2.34
+   ],
+   "h2h": 4.6,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    4
    ]
   }
  }
