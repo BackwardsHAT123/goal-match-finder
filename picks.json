@@ -32,6 +32,39 @@
    ]
   }
  },
+ "401880171": {
+  "away": "West Ham United",
+  "event_id": "401880171",
+  "flagged_on": "2026-10-31",
+  "home": "Blackburn Rovers",
+  "kickoff": "2026-11-07T15:00Z",
+  "league": "Championship",
+  "league_code": "championship",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.58,
+    2.54
+   ],
+   "h2h": 2.8,
+   "h2h_n": 5,
+   "last5": [
+    5,
+    5
+   ]
+  }
+ },
  "401880175": {
   "away": "West Ham United",
   "event_id": "401880175",
@@ -88,7 +121,7 @@
   "stats": {
    "avg": [
     1.58,
-    1.5
+    1.54
    ],
    "h2h": 2.2,
    "h2h_n": 5,
@@ -120,7 +153,7 @@
   },
   "stats": {
    "avg": [
-    1.67,
+    1.77,
     1.58
    ],
    "h2h": 2.2,
@@ -253,7 +286,7 @@
   "stats": {
    "avg": [
     2.31,
-    2.58
+    2.69
    ],
    "h2h": 2.67,
    "h2h_n": 3,
@@ -285,7 +318,7 @@
   },
   "stats": {
    "avg": [
-    2.3,
+    2.27,
     2.64
    ],
    "h2h": 4.2,
@@ -377,14 +410,14 @@
     "status": "below"
    },
    "2.5": {
-    "best": -235,
+    "best": -245,
     "book": "BetRivers",
     "status": "qualifying"
    }
   },
   "stats": {
    "avg": [
-    1.85,
+    1.86,
     3.5
    ],
    "h2h": 2.2,
@@ -852,12 +885,12 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1000,
+    "best": -750,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -275,
+    "best": -220,
     "book": "DraftKings",
     "status": "qualifying"
    }
@@ -885,13 +918,13 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1600,
-    "book": "FanDuel",
+    "best": -1540,
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -345,
-    "book": "BetRivers",
+    "best": -407,
+    "book": "DraftKings",
     "status": "below"
    }
   },
@@ -1000,6 +1033,204 @@
     2.34
    ],
    "h2h": 4.6,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
+ "761935": {
+  "away": "Columbus Crew",
+  "event_id": "761935",
+  "flagged_on": "2026-10-31",
+  "home": "Chicago Fire FC",
+  "kickoff": "2026-11-07T21:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.78,
+    1.62
+   ],
+   "h2h": 3.0,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
+ "761937": {
+  "away": "Nashville SC",
+  "event_id": "761937",
+  "flagged_on": "2026-10-31",
+  "home": "FC Cincinnati",
+  "kickoff": "2026-11-07T21:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.06,
+    2.06
+   ],
+   "h2h": 3.2,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
+ "761938": {
+  "away": "Charlotte FC",
+  "event_id": "761938",
+  "flagged_on": "2026-10-31",
+  "home": "Inter Miami CF",
+  "kickoff": "2026-11-07T21:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.34,
+    1.84
+   ],
+   "h2h": 1.8,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
+ "761940": {
+  "away": "New England Revolution",
+  "event_id": "761940",
+  "flagged_on": "2026-10-31",
+  "home": "Orlando City SC",
+  "kickoff": "2026-11-07T21:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.94,
+    1.69
+   ],
+   "h2h": 5.0,
+   "h2h_n": 5,
+   "last5": [
+    5,
+    4
+   ]
+  }
+ },
+ "761941": {
+  "away": "Toronto FC",
+  "event_id": "761941",
+  "flagged_on": "2026-10-31",
+  "home": "Philadelphia Union",
+  "kickoff": "2026-11-07T21:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.94,
+    1.56
+   ],
+   "h2h": 2.8,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
+ "761945": {
+  "away": "San Jose Earthquakes",
+  "event_id": "761945",
+  "flagged_on": "2026-10-31",
+  "home": "Minnesota United FC",
+  "kickoff": "2026-11-08T00:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.56,
+    1.69
+   ],
+   "h2h": 4.2,
    "h2h_n": 5,
    "last5": [
     4,
