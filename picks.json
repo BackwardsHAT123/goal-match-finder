@@ -14,8 +14,8 @@
     "status": "qualifying"
    },
    "2.5": {
-    "best": -143,
-    "book": "Bovada",
+    "best": -144,
+    "book": "FanDuel",
     "status": "qualifying"
    }
   },
@@ -433,12 +433,12 @@
   "markets": {
    "1.5": {
     "best": -1000,
-    "book": "BetRivers",
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -290,
-    "book": "FanDuel",
+    "best": -295,
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
@@ -543,13 +543,13 @@
   },
   "stats": {
    "avg": [
-    2.4,
+    2.18,
     2.71
    ],
    "h2h": 5.0,
    "h2h_n": 2,
    "last5": [
-    5,
+    4,
     5
    ]
   }
@@ -569,7 +569,7 @@
     "status": "below"
    },
    "2.5": {
-    "best": -220,
+    "best": -225,
     "book": "FanDuel",
     "status": "qualifying"
    }
@@ -1320,6 +1320,32 @@
     "status": "qualifying"
    }
   },
+  "notes": {
+   "details": [],
+   "flags": [],
+   "stats": {
+    "saves": [
+     3,
+     2
+    ],
+    "shots": [
+     13,
+     14
+    ],
+    "sot": [
+     3,
+     6
+    ]
+   }
+  },
+  "result": {
+   "away": 2,
+   "home": 1,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-02",
+   "total": 3
+  },
   "stats": {
    "avg": [
     1.69,
@@ -1344,12 +1370,12 @@
   "markets": {
    "1.5": {
     "best": -800,
-    "book": "BetMGM",
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -235,
-    "book": "FanDuel",
+    "best": -230,
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
@@ -1376,20 +1402,20 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1115,
-    "book": "BetRivers",
+    "best": -800,
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -295,
-    "book": "BetRivers",
+    "best": -240,
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
   "stats": {
    "avg": [
     2.03,
-    2.06
+    2.09
    ],
    "h2h": 3.2,
    "h2h_n": 5,
@@ -1409,19 +1435,19 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -3335,
-    "book": "BetRivers",
+    "best": -2000,
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -500,
-    "book": "BetRivers",
+    "best": -450,
+    "book": "DraftKings",
     "status": "below"
    }
   },
   "stats": {
    "avg": [
-    2.34,
+    2.33,
     1.91
    ],
    "h2h": 1.8,
@@ -1442,26 +1468,26 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1250,
-    "book": "BetRivers",
+    "best": -1100,
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -315,
-    "book": "BetRivers",
-    "status": "below"
+    "best": -300,
+    "book": "BetMGM",
+    "status": "qualifying"
    }
   },
   "stats": {
    "avg": [
     1.88,
-    1.69
+    1.67
    ],
    "h2h": 5.0,
    "h2h_n": 5,
    "last5": [
     4,
-    4
+    5
    ]
   }
  },
@@ -1508,19 +1534,19 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1250,
-    "book": "BetRivers",
+    "best": -800,
+    "book": "FanDuel",
     "status": "below"
    },
    "2.5": {
-    "best": -305,
-    "book": "BetRivers",
-    "status": "below"
+    "best": -225,
+    "book": "FanDuel",
+    "status": "qualifying"
    }
   },
   "stats": {
    "avg": [
-    1.56,
+    1.61,
     1.7
    ],
    "h2h": 4.2,
