@@ -9,7 +9,7 @@
   "league_code": "epl",
   "markets": {
    "1.5": {
-    "best": -440,
+    "best": -435,
     "book": "Bovada",
     "status": "qualifying"
    },
@@ -47,7 +47,7 @@
     "status": "qualifying"
    },
    "2.5": {
-    "best": -165,
+    "best": -168,
     "book": "Bovada",
     "status": "qualifying"
    }
@@ -432,13 +432,13 @@
   "league_code": "ucl",
   "markets": {
    "1.5": {
-    "best": -1000,
+    "best": -1100,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -295,
-    "book": "DraftKings",
+    "best": -300,
+    "book": "FanDuel",
     "status": "qualifying"
    }
   },
@@ -465,13 +465,13 @@
   "league_code": "ucl",
   "markets": {
    "1.5": {
-    "best": -1000,
+    "best": -1100,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -280,
-    "book": "DraftKings",
+    "best": -290,
+    "book": "FanDuel",
     "status": "qualifying"
    }
   },
@@ -536,7 +536,7 @@
     "status": "below"
    },
    "2.5": {
-    "best": -310,
+    "best": -330,
     "book": "DraftKings",
     "status": "below"
    }
@@ -570,7 +570,7 @@
    },
    "2.5": {
     "best": -225,
-    "book": "FanDuel",
+    "book": "BetRivers",
     "status": "qualifying"
    }
   },
@@ -1407,8 +1407,8 @@
     "status": "below"
    },
    "2.5": {
-    "best": -240,
-    "book": "DraftKings",
+    "best": -235,
+    "book": "BetMGM",
     "status": "qualifying"
    }
   },
@@ -1535,12 +1535,12 @@
   "markets": {
    "1.5": {
     "best": -800,
-    "book": "FanDuel",
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -225,
-    "book": "FanDuel",
+    "best": -235,
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
