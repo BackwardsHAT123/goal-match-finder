@@ -47,8 +47,8 @@
     "status": "qualifying"
    },
    "2.5": {
-    "best": -168,
-    "book": "Bovada",
+    "best": -167,
+    "book": "BetRivers",
     "status": "qualifying"
    }
   },
@@ -214,6 +214,43 @@
     "status": "pending_odds"
    }
   },
+  "notes": {
+   "details": [
+    "First-half sub: Blackburn Rovers 41'",
+    "Own goal 68'",
+    "Goal 87'",
+    "Injury delay 7'",
+    "Injury delay 39'"
+   ],
+   "flags": [
+    "first_half_sub",
+    "injury_delay",
+    "late_goal",
+    "own_goal"
+   ],
+   "stats": {
+    "saves": [
+     2,
+     2
+    ],
+    "shots": [
+     14,
+     11
+    ],
+    "sot": [
+     3,
+     3
+    ]
+   }
+  },
+  "result": {
+   "away": 2,
+   "home": 1,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-04",
+   "total": 3
+  },
   "stats": {
    "avg": [
     1.58,
@@ -246,6 +283,32 @@
     "book": null,
     "status": "pending_odds"
    }
+  },
+  "notes": {
+   "details": [],
+   "flags": [],
+   "stats": {
+    "saves": [
+     3,
+     5
+    ],
+    "shots": [
+     19,
+     15
+    ],
+    "sot": [
+     8,
+     2
+    ]
+   }
+  },
+  "result": {
+   "away": 0,
+   "home": 3,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-04",
+   "total": 3
   },
   "stats": {
    "avg": [
@@ -437,9 +500,9 @@
     "status": "below"
    },
    "2.5": {
-    "best": -300,
-    "book": "FanDuel",
-    "status": "qualifying"
+    "best": -310,
+    "book": "DraftKings",
+    "status": "below"
    }
   },
   "stats": {
@@ -465,14 +528,14 @@
   "league_code": "ucl",
   "markets": {
    "1.5": {
-    "best": -1100,
+    "best": -1400,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -290,
-    "book": "FanDuel",
-    "status": "qualifying"
+    "best": -375,
+    "book": "BetRivers",
+    "status": "below"
    }
   },
   "stats": {
@@ -507,6 +570,32 @@
     "book": null,
     "status": "pending_odds"
    }
+  },
+  "notes": {
+   "details": [],
+   "flags": [],
+   "stats": {
+    "saves": [
+     3,
+     2
+    ],
+    "shots": [
+     11,
+     11
+    ],
+    "sot": [
+     2,
+     6
+    ]
+   }
+  },
+  "result": {
+   "away": 3,
+   "home": 0,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-04",
+   "total": 3
   },
   "stats": {
    "avg": [
@@ -573,6 +662,36 @@
     "book": "BetRivers",
     "status": "qualifying"
    }
+  },
+  "notes": {
+   "details": [
+    "8 shots on target, 2 goals"
+   ],
+   "flags": [
+    "wasteful"
+   ],
+   "stats": {
+    "saves": [
+     3,
+     3
+    ],
+    "shots": [
+     9,
+     19
+    ],
+    "sot": [
+     3,
+     5
+    ]
+   }
+  },
+  "result": {
+   "away": 2,
+   "home": 0,
+   "over15": true,
+   "over25": false,
+   "settled_on": "2026-11-04",
+   "total": 2
   },
   "stats": {
    "avg": [
@@ -1369,7 +1488,7 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -800,
+    "best": -750,
     "book": "DraftKings",
     "status": "below"
    },
@@ -1474,7 +1593,7 @@
    },
    "2.5": {
     "best": -300,
-    "book": "BetMGM",
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
