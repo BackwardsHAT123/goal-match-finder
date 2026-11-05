@@ -14,8 +14,8 @@
     "status": "qualifying"
    },
    "2.5": {
-    "best": -144,
-    "book": "FanDuel",
+    "best": -140,
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
@@ -42,13 +42,13 @@
   "league_code": "epl",
   "markets": {
    "1.5": {
-    "best": -526,
-    "book": "Bovada",
+    "best": -525,
+    "book": "DraftKings",
     "status": "qualifying"
    },
    "2.5": {
-    "best": -167,
-    "book": "BetRivers",
+    "best": -165,
+    "book": "Bovada",
     "status": "qualifying"
    }
   },
@@ -180,6 +180,39 @@
     "book": null,
     "status": "pending_odds"
    }
+  },
+  "notes": {
+   "details": [
+    "Penalty scored: Cardiff City 37'",
+    "Injury delay 68'",
+    "Injury delay 79'"
+   ],
+   "flags": [
+    "injury_delay",
+    "penalty"
+   ],
+   "stats": {
+    "saves": [
+     7,
+     1
+    ],
+    "shots": [
+     7,
+     18
+    ],
+    "sot": [
+     4,
+     10
+    ]
+   }
+  },
+  "result": {
+   "away": 3,
+   "home": 3,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-05",
+   "total": 6
   },
   "stats": {
    "avg": [
@@ -472,6 +505,43 @@
     "status": "qualifying"
    }
   },
+  "notes": {
+   "details": [
+    "Red card: Napoli 88'",
+    "Goal 90'",
+    "Penalty scored: FC Porto 90'",
+    "Injury delay 46'",
+    "Injury delay 46'"
+   ],
+   "flags": [
+    "injury_delay",
+    "late_goal",
+    "penalty",
+    "red_card"
+   ],
+   "stats": {
+    "saves": [
+     5,
+     4
+    ],
+    "shots": [
+     19,
+     11
+    ],
+    "sot": [
+     8,
+     6
+    ]
+   }
+  },
+  "result": {
+   "away": 1,
+   "home": 4,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-05",
+   "total": 5
+  },
   "stats": {
    "avg": [
     2.08,
@@ -505,6 +575,40 @@
     "status": "below"
    }
   },
+  "notes": {
+   "details": [
+    "First-half sub: Club Brugge 36'",
+    "Injury delay 45'",
+    "Injury delay 45'",
+    "Injury delay 56'"
+   ],
+   "flags": [
+    "first_half_sub",
+    "injury_delay"
+   ],
+   "stats": {
+    "saves": [
+     1,
+     7
+    ],
+    "shots": [
+     27,
+     10
+    ],
+    "sot": [
+     9,
+     3
+    ]
+   }
+  },
+  "result": {
+   "away": 2,
+   "home": 1,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-05",
+   "total": 3
+  },
   "stats": {
    "avg": [
     2.64,
@@ -537,6 +641,36 @@
     "book": "BetRivers",
     "status": "below"
    }
+  },
+  "notes": {
+   "details": [
+    "Own goal 37'"
+   ],
+   "flags": [
+    "own_goal"
+   ],
+   "stats": {
+    "saves": [
+     3,
+     4
+    ],
+    "shots": [
+     14,
+     12
+    ],
+    "sot": [
+     6,
+     5
+    ]
+   }
+  },
+  "result": {
+   "away": 3,
+   "home": 2,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-05",
+   "total": 5
   },
   "stats": {
    "avg": [
@@ -629,6 +763,41 @@
     "book": "DraftKings",
     "status": "below"
    }
+  },
+  "notes": {
+   "details": [
+    "Goal 90'",
+    "Red card: AEK Athens 90'",
+    "Injury delay 59'",
+    "Injury delay 59'"
+   ],
+   "flags": [
+    "injury_delay",
+    "late_goal",
+    "red_card"
+   ],
+   "stats": {
+    "saves": [
+     5,
+     3
+    ],
+    "shots": [
+     9,
+     24
+    ],
+    "sot": [
+     5,
+     8
+    ]
+   }
+  },
+  "result": {
+   "away": 3,
+   "home": 2,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-05",
+   "total": 5
   },
   "stats": {
    "avg": [
@@ -1493,7 +1662,7 @@
     "status": "below"
    },
    "2.5": {
-    "best": -230,
+    "best": -225,
     "book": "DraftKings",
     "status": "qualifying"
    }
@@ -1521,13 +1690,13 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -800,
+    "best": -750,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -235,
-    "book": "BetMGM",
+    "best": -230,
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
@@ -1554,12 +1723,12 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -2000,
+    "best": -1800,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -450,
+    "best": -425,
     "book": "DraftKings",
     "status": "below"
    }
@@ -1587,12 +1756,12 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1100,
+    "best": -1000,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -300,
+    "best": -295,
     "book": "DraftKings",
     "status": "qualifying"
    }
@@ -1658,7 +1827,7 @@
     "status": "below"
    },
    "2.5": {
-    "best": -235,
+    "best": -245,
     "book": "DraftKings",
     "status": "qualifying"
    }
