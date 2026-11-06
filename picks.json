@@ -9,8 +9,8 @@
   "league_code": "epl",
   "markets": {
    "1.5": {
-    "best": -435,
-    "book": "Bovada",
+    "best": -425,
+    "book": "DraftKings",
     "status": "qualifying"
    },
    "2.5": {
@@ -42,8 +42,8 @@
   "league_code": "epl",
   "markets": {
    "1.5": {
-    "best": -525,
-    "book": "DraftKings",
+    "best": -526,
+    "book": "Bovada",
     "status": "qualifying"
    },
    "2.5": {
@@ -1696,7 +1696,7 @@
    },
    "2.5": {
     "best": -230,
-    "book": "DraftKings",
+    "book": "FanDuel",
     "status": "qualifying"
    }
   },
@@ -1756,7 +1756,7 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1000,
+    "best": -1100,
     "book": "DraftKings",
     "status": "below"
    },
