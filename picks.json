@@ -19,6 +19,38 @@
     "status": "qualifying"
    }
   },
+  "notes": {
+   "details": [
+    "Own goal 46'",
+    "Penalty scored: Ipswich Town 73'"
+   ],
+   "flags": [
+    "own_goal",
+    "penalty"
+   ],
+   "stats": {
+    "saves": [
+     3,
+     1
+    ],
+    "shots": [
+     10,
+     15
+    ],
+    "sot": [
+     2,
+     4
+    ]
+   }
+  },
+  "result": {
+   "away": 2,
+   "home": 1,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-08",
+   "total": 3
+  },
   "stats": {
    "avg": [
     1.56,
@@ -51,6 +83,42 @@
     "book": "Bovada",
     "status": "qualifying"
    }
+  },
+  "notes": {
+   "details": [
+    "Red card: Brentford 23'",
+    "Penalty scored: Brighton & Hove Albion 42'",
+    "Injury delay 62'",
+    "Injury delay 87'",
+    "Injury delay 87'"
+   ],
+   "flags": [
+    "injury_delay",
+    "penalty",
+    "red_card"
+   ],
+   "stats": {
+    "saves": [
+     0,
+     4
+    ],
+    "shots": [
+     20,
+     5
+    ],
+    "sot": [
+     6,
+     0
+    ]
+   }
+  },
+  "result": {
+   "away": 0,
+   "home": 2,
+   "over15": true,
+   "over25": false,
+   "settled_on": "2026-11-08",
+   "total": 2
   },
   "stats": {
    "avg": [
@@ -147,6 +215,32 @@
     "book": null,
     "status": "pending_odds"
    }
+  },
+  "notes": {
+   "details": [],
+   "flags": [],
+   "stats": {
+    "saves": [
+     4,
+     1
+    ],
+    "shots": [
+     5,
+     20
+    ],
+    "sot": [
+     3,
+     5
+    ]
+   }
+  },
+  "result": {
+   "away": 1,
+   "home": 2,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-08",
+   "total": 3
   },
   "stats": {
    "avg": [
@@ -1667,6 +1761,39 @@
     "status": "qualifying"
    }
   },
+  "notes": {
+   "details": [
+    "Penalty scored: Chicago Fire FC 8'",
+    "Penalty scored: Chicago Fire FC 22'",
+    "Goal 90'"
+   ],
+   "flags": [
+    "late_goal",
+    "penalty"
+   ],
+   "stats": {
+    "saves": [
+     2,
+     3
+    ],
+    "shots": [
+     14,
+     11
+    ],
+    "sot": [
+     6,
+     6
+    ]
+   }
+  },
+  "result": {
+   "away": 4,
+   "home": 3,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-08",
+   "total": 7
+  },
   "stats": {
    "avg": [
     1.85,
@@ -1699,6 +1826,41 @@
     "book": "FanDuel",
     "status": "qualifying"
    }
+  },
+  "notes": {
+   "details": [
+    "Goal 86'",
+    "Injury delay 22'",
+    "Injury delay 79'",
+    "10 shots on target, 2 goals"
+   ],
+   "flags": [
+    "injury_delay",
+    "late_goal",
+    "wasteful"
+   ],
+   "stats": {
+    "saves": [
+     3,
+     5
+    ],
+    "shots": [
+     14,
+     14
+    ],
+    "sot": [
+     5,
+     5
+    ]
+   }
+  },
+  "result": {
+   "away": 2,
+   "home": 0,
+   "over15": true,
+   "over25": false,
+   "settled_on": "2026-11-08",
+   "total": 2
   },
   "stats": {
    "avg": [
@@ -1733,6 +1895,38 @@
     "status": "below"
    }
   },
+  "notes": {
+   "details": [
+    "First-half sub: Inter Miami CF 24'",
+    "Goal 90'"
+   ],
+   "flags": [
+    "first_half_sub",
+    "late_goal"
+   ],
+   "stats": {
+    "saves": [
+     2,
+     2
+    ],
+    "shots": [
+     15,
+     11
+    ],
+    "sot": [
+     5,
+     5
+    ]
+   }
+  },
+  "result": {
+   "away": 3,
+   "home": 3,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-08",
+   "total": 6
+  },
   "stats": {
    "avg": [
     2.33,
@@ -1765,6 +1959,32 @@
     "book": "BetRivers",
     "status": "below"
    }
+  },
+  "notes": {
+   "details": [],
+   "flags": [],
+   "stats": {
+    "saves": [
+     4,
+     3
+    ],
+    "shots": [
+     15,
+     9
+    ],
+    "sot": [
+     4,
+     3
+    ]
+   }
+  },
+  "result": {
+   "away": 0,
+   "home": 1,
+   "over15": false,
+   "over25": false,
+   "settled_on": "2026-11-08",
+   "total": 1
   },
   "stats": {
    "avg": [
@@ -1799,6 +2019,42 @@
     "status": "pending_odds"
    }
   },
+  "notes": {
+   "details": [
+    "Penalty scored: Philadelphia Union 41'",
+    "Penalty scored: Philadelphia Union 73'",
+    "Injury delay 47'",
+    "Injury delay 59'",
+    "Injury delay 77'",
+    "Injury delay 90'"
+   ],
+   "flags": [
+    "injury_delay",
+    "penalty"
+   ],
+   "stats": {
+    "saves": [
+     0,
+     4
+    ],
+    "shots": [
+     19,
+     6
+    ],
+    "sot": [
+     9,
+     1
+    ]
+   }
+  },
+  "result": {
+   "away": 1,
+   "home": 4,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-08",
+   "total": 5
+  },
   "stats": {
    "avg": [
     1.94,
@@ -1831,6 +2087,38 @@
     "book": "DraftKings",
     "status": "qualifying"
    }
+  },
+  "notes": {
+   "details": [
+    "Own goal 82'",
+    "Goal 90'"
+   ],
+   "flags": [
+    "late_goal",
+    "own_goal"
+   ],
+   "stats": {
+    "saves": [
+     2,
+     4
+    ],
+    "shots": [
+     14,
+     8
+    ],
+    "sot": [
+     6,
+     3
+    ]
+   }
+  },
+  "result": {
+   "away": 1,
+   "home": 3,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-08",
+   "total": 4
   },
   "stats": {
    "avg": [
