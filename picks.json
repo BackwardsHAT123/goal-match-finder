@@ -969,6 +969,39 @@
    ]
   }
  },
+ "401933535": {
+  "away": "FC Cincinnati",
+  "event_id": "401933535",
+  "flagged_on": "2026-11-12",
+  "home": "Orlando City SC",
+  "kickoff": "2026-11-20T00:30Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -1400,
+    "book": "DraftKings",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -370,
+    "book": "DraftKings",
+    "status": "below"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.85,
+    1.97
+   ],
+   "h2h": 3.8,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
  "761898": {
   "away": "St. Louis CITY SC",
   "event_id": "761898",
