@@ -196,6 +196,72 @@
    ]
   }
  },
+ "401880152": {
+  "away": "Birmingham City",
+  "event_id": "401880152",
+  "flagged_on": "2026-11-14",
+  "home": "Stoke City",
+  "kickoff": "2026-11-21T15:00Z",
+  "league": "Championship",
+  "league_code": "championship",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.6,
+    1.87
+   ],
+   "h2h": 2.0,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
+ "401880155": {
+  "away": "Cardiff City",
+  "event_id": "401880155",
+  "flagged_on": "2026-11-14",
+  "home": "Norwich City",
+  "kickoff": "2026-11-21T12:30Z",
+  "league": "Championship",
+  "league_code": "championship",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.13,
+    1.8
+   ],
+   "h2h": 4.4,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
  "401880171": {
   "away": "West Ham United",
   "event_id": "401880171",
@@ -999,6 +1065,72 @@
    "last5": [
     4,
     4
+   ]
+  }
+ },
+ "401933732": {
+  "away": "Portland Timbers",
+  "event_id": "401933732",
+  "flagged_on": "2026-11-14",
+  "home": "FC Dallas",
+  "kickoff": "2026-11-21T21:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -800,
+    "book": "DraftKings",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -230,
+    "book": "DraftKings",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.82,
+    1.82
+   ],
+   "h2h": 2.6,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
+ "401933739": {
+  "away": "Columbus Crew",
+  "event_id": "401933739",
+  "flagged_on": "2026-11-14",
+  "home": "Inter Miami CF",
+  "kickoff": "2026-11-21T23:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -1100,
+    "book": "DraftKings",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -290,
+    "book": "DraftKings",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.35,
+    1.74
+   ],
+   "h2h": 3.8,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    5
    ]
   }
  },
