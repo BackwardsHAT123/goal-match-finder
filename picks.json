@@ -1068,6 +1068,39 @@
    ]
   }
  },
+ "401933730": {
+  "away": "Charlotte FC",
+  "event_id": "401933730",
+  "flagged_on": "2026-11-15",
+  "home": "Chicago Fire FC",
+  "kickoff": "2026-11-22T23:30Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": -1200,
+    "book": "DraftKings",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -300,
+    "book": "BetMGM",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.88,
+    1.94
+   ],
+   "h2h": 4.2,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
  "401933732": {
   "away": "Portland Timbers",
   "event_id": "401933732",
@@ -1116,8 +1149,8 @@
     "status": "below"
    },
    "2.5": {
-    "best": -290,
-    "book": "DraftKings",
+    "best": -285,
+    "book": "BetMGM",
     "status": "qualifying"
    }
   },
