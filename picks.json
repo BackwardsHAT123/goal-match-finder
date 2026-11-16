@@ -1050,7 +1050,7 @@
     "status": "below"
    },
    "2.5": {
-    "best": -360,
+    "best": -350,
     "book": "DraftKings",
     "status": "below"
    }
@@ -1078,13 +1078,13 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1200,
-    "book": "DraftKings",
+    "best": -1100,
+    "book": "BetMGM",
     "status": "below"
    },
    "2.5": {
     "best": -300,
-    "book": "BetMGM",
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
@@ -1111,7 +1111,7 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -800,
+    "best": -750,
     "book": "DraftKings",
     "status": "below"
    },
@@ -1144,13 +1144,13 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1100,
+    "best": -1000,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
     "best": -285,
-    "book": "BetMGM",
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
