@@ -196,6 +196,39 @@
    ]
   }
  },
+ "401880144": {
+  "away": "Queens Park Rangers",
+  "event_id": "401880144",
+  "flagged_on": "2026-11-17",
+  "home": "Norwich City",
+  "kickoff": "2026-11-24T19:45Z",
+  "league": "Championship",
+  "league_code": "championship",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.13,
+    1.6
+   ],
+   "h2h": 3.2,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
  "401880152": {
   "away": "Birmingham City",
   "event_id": "401880152",
@@ -645,6 +678,39 @@
    ]
   }
  },
+ "401915295": {
+  "away": "Borussia Dortmund",
+  "event_id": "401915295",
+  "flagged_on": "2026-11-17",
+  "home": "Arsenal",
+  "kickoff": "2026-11-24T20:00Z",
+  "league": "Champions League",
+  "league_code": "ucl",
+  "markets": {
+   "1.5": {
+    "best": -500,
+    "book": "FanDuel",
+    "status": "qualifying"
+   },
+   "2.5": {
+    "best": -154,
+    "book": "FanDuel",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.64,
+    1.77
+   ],
+   "h2h": 2.6,
+   "h2h_n": 5,
+   "last5": [
+    5,
+    5
+   ]
+  }
+ },
  "401915301": {
   "away": "Napoli",
   "event_id": "401915301",
@@ -904,6 +970,39 @@
    ]
   }
  },
+ "401915379": {
+  "away": "Napoli",
+  "event_id": "401915379",
+  "flagged_on": "2026-11-17",
+  "home": "Manchester City",
+  "kickoff": "2026-11-24T20:00Z",
+  "league": "Champions League",
+  "league_code": "ucl",
+  "markets": {
+   "1.5": {
+    "best": -1100,
+    "book": "DraftKings",
+    "status": "below"
+   },
+   "2.5": {
+    "best": -290,
+    "book": "FanDuel",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.36,
+    1.6
+   ],
+   "h2h": 3.2,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
  "401915383": {
   "away": "Real Madrid",
   "event_id": "401915383",
@@ -1045,12 +1144,12 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1400,
+    "best": -1200,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -350,
+    "best": -340,
     "book": "DraftKings",
     "status": "below"
    }
@@ -1078,13 +1177,13 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1100,
-    "book": "BetMGM",
+    "best": -1200,
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
     "best": -300,
-    "book": "DraftKings",
+    "book": "BetMGM",
     "status": "qualifying"
    }
   },
@@ -1111,12 +1210,12 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -750,
+    "best": -700,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -230,
+    "best": -220,
     "book": "DraftKings",
     "status": "qualifying"
    }
