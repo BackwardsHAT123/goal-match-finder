@@ -1,4 +1,37 @@
 {
+ "401878753": {
+  "away": "Manchester City",
+  "event_id": "401878753",
+  "flagged_on": "2026-11-22",
+  "home": "Arsenal",
+  "kickoff": "2026-11-29T16:30Z",
+  "league": "Premier League",
+  "league_code": "epl",
+  "markets": {
+   "1.5": {
+    "best": -420,
+    "book": "Bovada",
+    "status": "qualifying"
+   },
+   "2.5": {
+    "best": -139,
+    "book": "BetRivers",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.55,
+    2.0
+   ],
+   "h2h": 3.2,
+   "h2h_n": 5,
+   "last5": [
+    5,
+    4
+   ]
+  }
+ },
  "401878759": {
   "away": "AFC Bournemouth",
   "event_id": "401878759",
@@ -225,6 +258,39 @@
    "h2h_n": 5,
    "last5": [
     5,
+    4
+   ]
+  }
+ },
+ "401880128": {
+  "away": "Cardiff City",
+  "event_id": "401880128",
+  "flagged_on": "2026-11-22",
+  "home": "Swansea City",
+  "kickoff": "2026-11-29T12:00Z",
+  "league": "Championship",
+  "league_code": "championship",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.5,
+    1.75
+   ],
+   "h2h": 2.8,
+   "h2h_n": 5,
+   "last5": [
+    4,
     4
    ]
   }
@@ -843,6 +909,39 @@
    ]
   }
  },
+ "401915294": {
+  "away": "FC Porto",
+  "event_id": "401915294",
+  "flagged_on": "2026-11-22",
+  "home": "Feyenoord Rotterdam",
+  "kickoff": "2026-11-24T20:00Z",
+  "league": "Champions League",
+  "league_code": "ucl",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.47,
+    2.2
+   ],
+   "h2h": 3.5,
+   "h2h_n": 2,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
  "401915295": {
   "away": "Borussia Dortmund",
   "event_id": "401915295",
@@ -853,7 +952,7 @@
   "league_code": "ucl",
   "markets": {
    "1.5": {
-    "best": -500,
+    "best": -475,
     "book": "DraftKings",
     "status": "qualifying"
    },
@@ -865,7 +964,7 @@
   },
   "stats": {
    "avg": [
-    1.64,
+    1.67,
     1.71
    ],
    "h2h": 2.6,
@@ -1150,8 +1249,8 @@
     "status": "below"
    },
    "2.5": {
-    "best": -295,
-    "book": "DraftKings",
+    "best": -300,
+    "book": "FanDuel",
     "status": "qualifying"
    }
   },
@@ -1178,20 +1277,20 @@
   "league_code": "ucl",
   "markets": {
    "1.5": {
-    "best": -1100,
+    "best": -1000,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -286,
-    "book": "BetRivers",
+    "best": -280,
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
   "stats": {
    "avg": [
     2.27,
-    1.6
+    1.56
    ],
    "h2h": 3.2,
    "h2h_n": 5,
@@ -1407,22 +1506,22 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": null,
-    "book": null,
-    "status": "pending_odds"
+    "best": -900,
+    "book": "DraftKings",
+    "status": "below"
    },
    "2.5": {
-    "best": null,
-    "book": null,
-    "status": "pending_odds"
+    "best": -260,
+    "book": "DraftKings",
+    "status": "qualifying"
    }
   },
   "stats": {
    "avg": [
-    1.82,
-    1.82
+    1.77,
+    1.86
    ],
-   "h2h": 2.6,
+   "h2h": 3.2,
    "h2h_n": 5,
    "last5": [
     4,
@@ -1440,14 +1539,14 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": null,
-    "book": null,
-    "status": "pending_odds"
+    "best": -770,
+    "book": "BetRivers",
+    "status": "below"
    },
    "2.5": {
-    "best": null,
-    "book": null,
-    "status": "pending_odds"
+    "best": -225,
+    "book": "BetRivers",
+    "status": "qualifying"
    }
   },
   "stats": {
@@ -1539,13 +1638,13 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -900,
-    "book": "FanDuel",
+    "best": -910,
+    "book": "BetRivers",
     "status": "below"
    },
    "2.5": {
-    "best": -245,
-    "book": "DraftKings",
+    "best": -250,
+    "book": "BetRivers",
     "status": "qualifying"
    }
   },
@@ -1572,13 +1671,13 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -1200,
+    "best": -900,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -300,
-    "book": "BetMGM",
+    "best": -265,
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
@@ -1605,12 +1704,12 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -800,
+    "best": -750,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -245,
+    "best": -220,
     "book": "DraftKings",
     "status": "qualifying"
    }
@@ -1648,6 +1747,38 @@
     "status": "qualifying"
    }
   },
+  "notes": {
+   "details": [
+    "First-half sub: Portland Timbers 33'",
+    "Goal 90'"
+   ],
+   "flags": [
+    "first_half_sub",
+    "late_goal"
+   ],
+   "stats": {
+    "saves": [
+     5,
+     5
+    ],
+    "shots": [
+     15,
+     12
+    ],
+    "sot": [
+     8,
+     5
+    ]
+   }
+  },
+  "result": {
+   "away": 0,
+   "home": 3,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-22",
+   "total": 3
+  },
   "stats": {
    "avg": [
     1.82,
@@ -1676,7 +1807,7 @@
     "status": "below"
    },
    "2.5": {
-    "best": -278,
+    "best": -286,
     "book": "BetRivers",
     "status": "qualifying"
    }
@@ -1713,6 +1844,41 @@
     "book": "DraftKings",
     "status": "qualifying"
    }
+  },
+  "notes": {
+   "details": [
+    "Penalty scored: Columbus Crew 9'",
+    "Red card: Inter Miami CF 36'",
+    "Injury delay 3'",
+    "Injury delay 37'"
+   ],
+   "flags": [
+    "injury_delay",
+    "penalty",
+    "red_card"
+   ],
+   "stats": {
+    "saves": [
+     3,
+     4
+    ],
+    "shots": [
+     8,
+     9
+    ],
+    "sot": [
+     4,
+     6
+    ]
+   }
+  },
+  "result": {
+   "away": 3,
+   "home": 0,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-22",
+   "total": 3
   },
   "stats": {
    "avg": [
