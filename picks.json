@@ -952,13 +952,13 @@
   "league_code": "ucl",
   "markets": {
    "1.5": {
-    "best": -475,
+    "best": -525,
     "book": "DraftKings",
     "status": "qualifying"
    },
    "2.5": {
-    "best": -154,
-    "book": "FanDuel",
+    "best": -159,
+    "book": "BetRivers",
     "status": "qualifying"
    }
   },
@@ -1244,13 +1244,13 @@
   "league_code": "ucl",
   "markets": {
    "1.5": {
-    "best": -1100,
+    "best": -1000,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -300,
-    "book": "FanDuel",
+    "best": -285,
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
@@ -1277,14 +1277,14 @@
   "league_code": "ucl",
   "markets": {
    "1.5": {
-    "best": -1000,
+    "best": -1200,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -280,
+    "best": -320,
     "book": "DraftKings",
-    "status": "qualifying"
+    "status": "below"
    }
   },
   "stats": {
@@ -1572,8 +1572,8 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -715,
-    "book": "BetRivers",
+    "best": -700,
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
@@ -1584,13 +1584,13 @@
   },
   "stats": {
    "avg": [
-    1.54,
-    2.18
+    1.5,
+    2.17
    ],
-   "h2h": 3.0,
+   "h2h": 2.8,
    "h2h_n": 5,
    "last5": [
-    5,
+    4,
     4
    ]
   }
@@ -1648,6 +1648,36 @@
     "status": "qualifying"
    }
   },
+  "notes": {
+   "details": [
+    "12 shots on target, 2 goals"
+   ],
+   "flags": [
+    "wasteful"
+   ],
+   "stats": {
+    "saves": [
+     5,
+     5
+    ],
+    "shots": [
+     22,
+     14
+    ],
+    "sot": [
+     7,
+     5
+    ]
+   }
+  },
+  "result": {
+   "away": 0,
+   "home": 2,
+   "over15": true,
+   "over25": false,
+   "settled_on": "2026-11-23",
+   "total": 2
+  },
   "stats": {
    "avg": [
     2.18,
@@ -1681,6 +1711,43 @@
     "status": "qualifying"
    }
   },
+  "notes": {
+   "details": [
+    "Penalty saved: Charlotte FC 90'",
+    "Goal 90'",
+    "Injury delay 5'",
+    "Injury delay 50'",
+    "Injury delay 75'",
+    "Injury delay 81'"
+   ],
+   "flags": [
+    "injury_delay",
+    "late_goal",
+    "penalty"
+   ],
+   "stats": {
+    "saves": [
+     3,
+     4
+    ],
+    "shots": [
+     27,
+     19
+    ],
+    "sot": [
+     4,
+     5
+    ]
+   }
+  },
+  "result": {
+   "away": 2,
+   "home": 1,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-23",
+   "total": 3
+  },
   "stats": {
    "avg": [
     1.88,
@@ -1713,6 +1780,38 @@
     "book": "DraftKings",
     "status": "qualifying"
    }
+  },
+  "notes": {
+   "details": [
+    "Own goal 7'",
+    "8 shots on target, 1 goals"
+   ],
+   "flags": [
+    "own_goal",
+    "wasteful"
+   ],
+   "stats": {
+    "saves": [
+     2,
+     6
+    ],
+    "shots": [
+     23,
+     5
+    ],
+    "sot": [
+     6,
+     2
+    ]
+   }
+  },
+  "result": {
+   "away": 1,
+   "home": 0,
+   "over15": false,
+   "over25": false,
+   "settled_on": "2026-11-23",
+   "total": 1
   },
   "stats": {
    "avg": [
@@ -1803,25 +1902,25 @@
   "markets": {
    "1.5": {
     "best": -1000,
-    "book": "BetRivers",
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -286,
-    "book": "BetRivers",
+    "best": -275,
+    "book": "BetMGM",
     "status": "qualifying"
    }
   },
   "stats": {
    "avg": [
     1.94,
-    1.88
+    1.86
    ],
-   "h2h": 4.2,
+   "h2h": 3.4,
    "h2h_n": 5,
    "last5": [
     5,
-    4
+    5
    ]
   }
  },
