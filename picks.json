@@ -251,13 +251,13 @@
   },
   "stats": {
    "avg": [
-    2.38,
+    2.24,
     1.56
    ],
    "h2h": 2.0,
    "h2h_n": 5,
    "last5": [
-    5,
+    4,
     4
    ]
   }
@@ -317,8 +317,8 @@
   },
   "stats": {
    "avg": [
-    1.56,
-    1.56
+    1.53,
+    1.53
    ],
    "h2h": 2.2,
    "h2h_n": 5,
@@ -1244,13 +1244,13 @@
   "league_code": "ucl",
   "markets": {
    "1.5": {
-    "best": -1000,
+    "best": -1100,
     "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
-    "best": -285,
-    "book": "DraftKings",
+    "best": -295,
+    "book": "BetRivers",
     "status": "qualifying"
    }
   },
@@ -1511,7 +1511,7 @@
     "status": "below"
    },
    "2.5": {
-    "best": -260,
+    "best": -255,
     "book": "DraftKings",
     "status": "qualifying"
    }
@@ -1572,8 +1572,8 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -700,
-    "book": "DraftKings",
+    "best": -715,
+    "book": "BetRivers",
     "status": "below"
    },
    "2.5": {
