@@ -1,4 +1,37 @@
 {
+ "401878750": {
+  "away": "Arsenal",
+  "event_id": "401878750",
+  "flagged_on": "2026-11-25",
+  "home": "Brentford",
+  "kickoff": "2026-12-02T20:15Z",
+  "league": "Premier League",
+  "league_code": "epl",
+  "markets": {
+   "1.5": {
+    "best": -380,
+    "book": "DraftKings",
+    "status": "qualifying"
+   },
+   "2.5": {
+    "best": -125,
+    "book": "DraftKings",
+    "status": "qualifying"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.82,
+    1.55
+   ],
+   "h2h": 2.6,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    5
+   ]
+  }
+ },
  "401878753": {
   "away": "Manchester City",
   "event_id": "401878753",
@@ -348,6 +381,41 @@
     "status": "pending_odds"
    }
   },
+  "notes": {
+   "details": [
+    "Goal 90'",
+    "Injury delay 32'",
+    "Injury delay 90'",
+    "10 shots on target, 2 goals"
+   ],
+   "flags": [
+    "injury_delay",
+    "late_goal",
+    "wasteful"
+   ],
+   "stats": {
+    "saves": [
+     2,
+     6
+    ],
+    "shots": [
+     20,
+     11
+    ],
+    "sot": [
+     7,
+     3
+    ]
+   }
+  },
+  "result": {
+   "away": 1,
+   "home": 1,
+   "over15": true,
+   "over25": false,
+   "settled_on": "2026-11-25",
+   "total": 2
+  },
   "stats": {
    "avg": [
     1.56,
@@ -380,6 +448,32 @@
     "book": null,
     "status": "pending_odds"
    }
+  },
+  "notes": {
+   "details": [],
+   "flags": [],
+   "stats": {
+    "saves": [
+     1,
+     1
+    ],
+    "shots": [
+     12,
+     7
+    ],
+    "sot": [
+     2,
+     2
+    ]
+   }
+  },
+  "result": {
+   "away": 1,
+   "home": 1,
+   "over15": true,
+   "over25": false,
+   "settled_on": "2026-11-25",
+   "total": 2
   },
   "stats": {
    "avg": [
@@ -929,6 +1023,42 @@
     "status": "pending_odds"
    }
   },
+  "notes": {
+   "details": [
+    "Own goal 2'",
+    "Injury delay 71'",
+    "Injury delay 90'",
+    "Injury delay 90'",
+    "10 shots on target, 1 goals"
+   ],
+   "flags": [
+    "injury_delay",
+    "own_goal",
+    "wasteful"
+   ],
+   "stats": {
+    "saves": [
+     3,
+     6
+    ],
+    "shots": [
+     21,
+     9
+    ],
+    "sot": [
+     7,
+     3
+    ]
+   }
+  },
+  "result": {
+   "away": 1,
+   "home": 0,
+   "over15": false,
+   "over25": false,
+   "settled_on": "2026-11-25",
+   "total": 1
+  },
   "stats": {
    "avg": [
     2.47,
@@ -961,6 +1091,36 @@
     "book": "BetRivers",
     "status": "qualifying"
    }
+  },
+  "notes": {
+   "details": [
+    "8 shots on target, 2 goals"
+   ],
+   "flags": [
+    "wasteful"
+   ],
+   "stats": {
+    "saves": [
+     3,
+     3
+    ],
+    "shots": [
+     30,
+     13
+    ],
+    "sot": [
+     4,
+     4
+    ]
+   }
+  },
+  "result": {
+   "away": 1,
+   "home": 1,
+   "over15": true,
+   "over25": false,
+   "settled_on": "2026-11-25",
+   "total": 2
   },
   "stats": {
    "avg": [
@@ -1287,6 +1447,36 @@
     "status": "below"
    }
   },
+  "notes": {
+   "details": [
+    "Goal 86'"
+   ],
+   "flags": [
+    "late_goal"
+   ],
+   "stats": {
+    "saves": [
+     1,
+     5
+    ],
+    "shots": [
+     18,
+     9
+    ],
+    "sot": [
+     7,
+     3
+    ]
+   }
+  },
+  "result": {
+   "away": 2,
+   "home": 2,
+   "over15": true,
+   "over25": true,
+   "settled_on": "2026-11-25",
+   "total": 4
+  },
   "stats": {
    "avg": [
     2.27,
@@ -1496,6 +1686,105 @@
    ]
   }
  },
+ "401933716": {
+  "away": "Portland Timbers",
+  "event_id": "401933716",
+  "flagged_on": "2026-11-25",
+  "home": "FC Dallas",
+  "kickoff": "2026-12-03T01:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.86,
+    1.77
+   ],
+   "h2h": 3.2,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
+ "401933717": {
+  "away": "Real Salt Lake",
+  "event_id": "401933717",
+  "flagged_on": "2026-11-25",
+  "home": "Vancouver Whitecaps",
+  "kickoff": "2026-12-03T02:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    2.17,
+    1.5
+   ],
+   "h2h": 2.8,
+   "h2h_n": 5,
+   "last5": [
+    4,
+    4
+   ]
+  }
+ },
+ "401933718": {
+  "away": "Charlotte FC",
+  "event_id": "401933718",
+  "flagged_on": "2026-11-25",
+  "home": "Chicago Fire FC",
+  "kickoff": "2026-12-03T01:00Z",
+  "league": "MLS",
+  "league_code": "mls",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.86,
+    1.94
+   ],
+   "h2h": 3.4,
+   "h2h_n": 5,
+   "last5": [
+    5,
+    5
+   ]
+  }
+ },
  "401933721": {
   "away": "FC Dallas",
   "event_id": "401933721",
@@ -1511,7 +1800,7 @@
     "status": "below"
    },
    "2.5": {
-    "best": -255,
+    "best": -260,
     "book": "DraftKings",
     "status": "qualifying"
    }
@@ -1572,8 +1861,8 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -715,
-    "book": "BetRivers",
+    "best": -700,
+    "book": "DraftKings",
     "status": "below"
    },
    "2.5": {
@@ -1902,12 +2191,12 @@
   "markets": {
    "1.5": {
     "best": -1000,
-    "book": "DraftKings",
+    "book": "FanDuel",
     "status": "below"
    },
    "2.5": {
     "best": -275,
-    "book": "BetMGM",
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
