@@ -42,12 +42,12 @@
   "league_code": "epl",
   "markets": {
    "1.5": {
-    "best": -420,
-    "book": "Bovada",
+    "best": -400,
+    "book": "DraftKings",
     "status": "qualifying"
    },
    "2.5": {
-    "best": -135,
+    "best": -130,
     "book": "DraftKings",
     "status": "qualifying"
    }
@@ -255,6 +255,39 @@
     2.88
    ],
    "h2h": 3.2,
+   "h2h_n": 5,
+   "last5": [
+    5,
+    4
+   ]
+  }
+ },
+ "401880116": {
+  "away": "West Ham United",
+  "event_id": "401880116",
+  "flagged_on": "2026-11-27",
+  "home": "Sheffield United",
+  "kickoff": "2026-12-04T20:00Z",
+  "league": "Championship",
+  "league_code": "championship",
+  "markets": {
+   "1.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   },
+   "2.5": {
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
+   }
+  },
+  "stats": {
+   "avg": [
+    1.53,
+    2.24
+   ],
+   "h2h": 2.2,
    "h2h_n": 5,
    "last5": [
     5,
@@ -1826,14 +1859,14 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -800,
-    "book": "DraftKings",
-    "status": "below"
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
    },
    "2.5": {
-    "best": -250,
-    "book": "DraftKings",
-    "status": "qualifying"
+    "best": null,
+    "book": null,
+    "status": "pending_odds"
    }
   },
   "stats": {
@@ -1892,13 +1925,13 @@
   "league_code": "mls",
   "markets": {
    "1.5": {
-    "best": -700,
-    "book": "DraftKings",
-    "status": "below"
+    "best": -480,
+    "book": "FanDuel",
+    "status": "qualifying"
    },
    "2.5": {
-    "best": -205,
-    "book": "BetRivers",
+    "best": -160,
+    "book": "DraftKings",
     "status": "qualifying"
    }
   },
